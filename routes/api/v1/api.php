@@ -25,15 +25,15 @@ Route::middleware('auth:api')->get('/all',function(){
 });
 
 
-// Route::post('login',function(){
-//     $login = Request()->validate([
-//         "email" => "required|email|string",
-//         "password" => "required|string"
-//     ]);
-//     if(!Auth::attempt(($login))){
-//         return response(['message'=>'wrong credentiols']);
-//     }
-//     $accessToken = Auth::user()->createToken('authToken')->accessToken;
-//     return response(['user'=>Auth::user(),'accessToken'=>$accessToken]);
+Route::post('login',function(){
+    $login = Request()->validate([
+        "email" => "required|email|string",
+        "password" => "required|string"
+    ]);
+    if(!Auth::attempt(($login))){
+        return response(['message'=>'wrong credentiols']);
+    }
+    $accessToken = Auth::user()->createToken('authToken')->accessToken;
+    return response(['user'=>Auth::user(),'accessToken'=>$accessToken]);
 
-// });
+});
