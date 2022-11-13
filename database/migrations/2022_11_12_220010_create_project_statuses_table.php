@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNearLocationsTable extends Migration
+class CreateProjectStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateNearLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('near_locations', function (Blueprint $table) {
+        Schema::create('project_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('link');
-            $table->foreignId('property_id')->onDelete('cascade')->onUpdate('cascade')->nullable();
-            $table->foreignId('project_id')->nullable()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateNearLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('near_locations');
+        Schema::dropIfExists('project_statuses');
     }
 }

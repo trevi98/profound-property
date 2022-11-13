@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->text('img')->nullable();
             $table->string('phone')->nullable();
-            $table->foreignId('role_id')->constrained()->nullOnDelete();
+            $table->foreignId('role_id')->nullOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });
