@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Near_location extends Model
 {
     use HasFactory;
+    
+    protected $guarded = [];
+
+    public function property(){
+        return $this->belongsTo(Property::class);
+    }
+
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
 }

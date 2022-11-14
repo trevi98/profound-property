@@ -15,7 +15,8 @@ class CreateLocationTrackersTable extends Migration
     {
         Schema::create('location_trackers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('property_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('property_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('project_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('location_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

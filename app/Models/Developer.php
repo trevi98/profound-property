@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Developer extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function project(){
+        return $this->hasOne(Project::class);
+    }
 }

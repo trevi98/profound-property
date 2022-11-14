@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Project_3d extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
 }

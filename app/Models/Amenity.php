@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Amenity extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function property(){
+        return $this->belongsToMany(Property::class);
+    }
+
+    public function project(){
+        return $this->belongsToMany(Project::class);
+    }
 }
