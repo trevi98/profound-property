@@ -3,9 +3,9 @@ require('../sass/app.scss')
 
 
 import { createApp } from 'vue'
-import App from './components/app.vue'
+import App from './app.vue'
 import router from './routes/home'
-// import './index.css'
+import '../css/app.css'
 
 createApp(App).use(router).mount('#app')
 
