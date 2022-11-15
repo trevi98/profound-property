@@ -25,5 +25,8 @@ class Project extends Model
     public function developer(){
         return $this->belongsTo(Developer::class);
     }
+    public function near_by_location(){
+        return $this->hasMany(Near_location::class);
+    }
 
 }
