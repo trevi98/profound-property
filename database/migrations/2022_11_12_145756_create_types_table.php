@@ -16,6 +16,7 @@ class CreateTypesTable extends Migration
         Schema::create('types', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->boolean('show')->default(true);
             $table->timestamps();
         });
     }

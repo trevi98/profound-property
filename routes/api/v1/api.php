@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,4 +37,14 @@ Route::post('login',function(){
     $accessToken = Auth::user()->createToken('authToken')->accessToken;
     return response(['user'=>Auth::user(),'accessToken'=>$accessToken]);
 
+});
+
+
+
+Route::get('/types-for-nav',function(){
+    $types = Type::where('show',true)->get();
+    return response([
+        'status' => 'success',
+        'payload' => $types
+    ]);
 });
