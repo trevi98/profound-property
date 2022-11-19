@@ -28,6 +28,7 @@ class CreateProjectsTable extends Migration
             $table->date('completion_date')->nullable();
             $table->date('starting_date');
             $table->string('area');
+            $table->boolean('featured')->default(false);
             $table->text('location_link');
             // $table->string('category')->default('rent');
             $table->integer('stores')->nullable();
@@ -37,7 +38,6 @@ class CreateProjectsTable extends Migration
             $table->foreignId('project_status_id')->nullOnDelete();
             $table->foreignId('location_id')->nullOnDelete();
             $table->foreignId('type_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('size_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

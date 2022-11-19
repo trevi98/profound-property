@@ -16,8 +16,8 @@ class CreateLocationsTable extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->boolean('is_parent');
-            $table->boolean('is_chield');
+            $table->boolean('is_parent')->default(false);
+            $table->boolean('is_chield')->default(false);
             $table->foreignId('location_id')->nullOnDelete()->nullable();
             $table->timestamps();
         });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -46,5 +47,13 @@ Route::get('/types-for-nav',function(){
     return response([
         'status' => 'success',
         'payload' => $types
+    ]);
+});
+
+Route::get('/projects/featured',function(){
+    $projects = Project::where('featured',true)->get();
+    return response([
+        'status' => 'success',
+        'payload' => $projects
     ]);
 });
