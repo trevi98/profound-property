@@ -12,10 +12,14 @@ class Location extends Model
     public function property(){
         return $this->hasMany(Property::class);
     }
-    public function sub_location(){
-        return Location::where('parent_id',$this->id)->get();
-    }
     public function project(){
         return $this->hasMany(Project::class);
+    }
+    public function image(){
+        return $this->hasMany(Location_image::class);
+    }
+    public function developer()
+    {
+        return $this->hasManyThrough(Project::class, Developer::class);
     }
 }

@@ -1,10 +1,13 @@
 <template>
-  <h1>ayoo home</h1>
+    <Header/>
+
 </template>
 
 <script>
+import Header from '../components/Header.vue'
 export default {
 
+    components:{Header}
 }
 </script>
 

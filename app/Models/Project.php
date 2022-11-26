@@ -29,4 +29,13 @@ class Project extends Model
         return $this->hasMany(Near_location::class);
     }
 
+    public function project_size(){
+        return $this->hasMany(Project_size::class);
+    }
+
+    public function type()
+    {
+        return $this->hasManyThrough(Type::class, Project_size::class);
+    }
+
 }

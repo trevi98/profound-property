@@ -17,11 +17,13 @@ class DeveloperSeeder extends Seeder
         //
         DB::table('developers')->insert([
             'title' => "Damac",
-            'cover' =>'damac.jpg'
+            'cover' =>'damac.jpg',
+            'about' => 'about'
         ]);
         DB::table('developers')->insert([
             'title' => "Emaar",
-            'cover' =>'emaar.png'
+            'cover' =>'emaar.png',
+            'about' => 'about'
         ]);
     }
 }

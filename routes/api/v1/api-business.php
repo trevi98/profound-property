@@ -37,3 +37,19 @@ Route::post('login',function(){
     return response(['user'=>Auth::user(),'accessToken'=>$accessToken]);
 
 });
+
+Route::post('login-agent',function(){
+    $login = Request()->validate([
+        "email" => "required|email|string",
+        "password" => "required|string"
+    ]);
+    if(!Auth::attempt(($login))){
+        return response(['message'=>'wrong credentiols'],400);
+    }
+    if(!Auth::user()->role->title == 'agent' && !Auth::user()->role->title == 'admin'){
+        return response(['message'=>'You are not authorized!'],400);
+    }
+    $accessToken = Auth::user()->createToken('authToken')->accessToken;
+    return response(['user'=>Auth::user(),'accessToken'=>$accessToken]);
+
+});

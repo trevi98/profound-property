@@ -21,6 +21,10 @@ class CreatePropertiesTable extends Migration
             $table->text('cover');
             $table->text('video')->nullable();
             $table->integer('bathrooms');
+            $table->string('permit_number');
+            $table->string('property_name');
+            $table->boolean('featured')->default(false);
+            $table->boolean('sold')->default(false);
             $table->string('area');
             $table->string('category')->default('rent');
             $table->foreignId('user_id')->nullOnDelete();

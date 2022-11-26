@@ -1,5 +1,4 @@
 <template>
-    <Header/>
     <!-- <router-link :to="{name:'xx'}">Go to Foo</router-link> -->
     <router-view/>
 

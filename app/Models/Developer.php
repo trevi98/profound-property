@@ -13,4 +13,8 @@ class Developer extends Model
     public function project(){
         return $this->hasOne(Project::class);
     }
+    public function location()
+    {
+        return $this->hasManyThrough(Location::class, Project::class);
+    }
 }

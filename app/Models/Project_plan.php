@@ -11,7 +11,7 @@ class Project_plan extends Model
 
     protected $guarded = [];
 
-    public function project(){
-        return $this->belongsTo(Project::class);
+    public function project_size(){
+        return $this->belongsTo(Project_size::class);
     }
 }
