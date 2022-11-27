@@ -30,9 +30,9 @@ class CreateProjectsTable extends Migration
             $table->string('area');
             $table->boolean('featured')->default(false);
             $table->text('location_link');
-            // $table->string('category')->default('rent');
             $table->integer('stores')->nullable();
             $table->integer('appartments_in_store')->nullable();
+            $table->integer('number_of_unites_available')->nullable();
             $table->foreignId('user_id')->nullOnDelete();
             $table->foreignId('developer_id')->nullOnDelete();
             $table->foreignId('project_status_id')->nullOnDelete();

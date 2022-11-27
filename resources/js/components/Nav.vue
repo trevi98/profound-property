@@ -9,11 +9,11 @@
         <div class="flex justify-evenly w-full">
             <slot name="account">
                 <div class="max-w-[150px] h-[25px] bg-[#ccc] flex gap-[5px]">
-                    <router-link :to="{name:'xx'}">
+                    <router-link :to="{name:'home'}">
                         Login
                     </router-link>
                     <div>/</div>
-                    <router-link :to="{name:'xx'}">
+                    <router-link :to="{name:'home'}">
                         Register
                     </router-link>
                 </div>
@@ -25,6 +25,6 @@
 <script>
 export default{
     name:'Nav',
-    components:{}    
+    components:{}
 }
 </script>

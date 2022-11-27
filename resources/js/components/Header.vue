@@ -7,18 +7,18 @@
                 <img src="/images/w-logo.png" alt="" class="max-w-[250px]">
             </template>
             <template v-if="types" v-slot:links>
-                <router-link :to="{name:'xx'}">
+                <router-link :to="{name:'home'}">
                     Buy
                 </router-link>
-                <router-link :to="{name:'xx'}">
+                <router-link :to="{name:'home'}">
                     Rent
                 </router-link>
                 <template v-for="type in types" :key="type.id">
-                    <router-link :to="{name:'xx'}">
+                    <router-link :to="{name:'home'}">
                         {{type.title}}
                     </router-link>
                 </template>
-                <router-link :to="{name:'xx'}">
+                <router-link :to="{name:'home'}">
                     Off plan
                 </router-link>
             </template>

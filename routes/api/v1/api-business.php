@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Location;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +51,10 @@ Route::post('login-agent',function(){
         return response(['message'=>'You are not authorized!'],400);
     }
     $accessToken = Auth::user()->createToken('authToken')->accessToken;
-    return response(['user'=>Auth::user(),'accessToken'=>$accessToken]);
+    return response(['user'=>Auth::user(),'accessToken'=>$accessToken,'roleTitle'=>Auth::user()->role->title]);
 
+});
+
+Route::get('/locations',function(){
+    return response(['areas'=>Location::all()]);
 });

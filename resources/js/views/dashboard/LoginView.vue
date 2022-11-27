@@ -50,8 +50,12 @@ export default {
                 // console.log(response.data);
                 this.setToken(response.data.accessToken);
                 $cookies.set('token',response.data.accessToken)
+                $cookies.set('role',response.data.roleTitle)
                 console.log($cookies.get('token'));
-                this.$router.push({ name: "xx"})
+                if($cookies.get('token') != "" && $cookies.get('role') == 'agent'){
+
+                    this.$router.push({ name: "home"})
+                }
             })
             .catch( (error) => {
                 console.log(error);
@@ -67,8 +71,8 @@ export default {
         }
     },
     mounted(){
-        if($cookies.get('token') != ''){
-            this.$router.push({ name: "xx"})
+        if($cookies.get('token') != '' && $cookies.get('role') == 'agent'){
+            this.$router.push({ name: "home"})
         }
     }
 
