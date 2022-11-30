@@ -12,8 +12,15 @@
         "laravel/passport": "*",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "3.*"
+        "laravel/ui": "3.*",
+        "laravel/nova": "*"
     },
+    "repositories": [
+    {
+    "type": "path",
+    "url": "./nova"
+    }
+    ],
     "require-dev": {
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",

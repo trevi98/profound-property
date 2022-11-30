@@ -1,10 +1,14 @@
 <?php
 
+use App\Models\Developer;
 use App\Models\Location;
+use App\Models\Project_status;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,5 +60,39 @@ Route::post('login-agent',function(){
 });
 
 Route::get('/locations',function(){
-    return response(['areas'=>Location::all()]);
+    return response(['payload'=>Location::all()]);
+});
+Route::get('/developers',function(){
+    return response(['payload'=>Developer::all()]);
+});
+Route::get('/types',function(){
+    return response(['payload'=>Type::all()]);
+});
+Route::get('/project-status',function(){
+    return response(['payload'=>Project_status::all()]);
+});
+Route::post('/upload_file',function(){
+    header('Access-Control-Allow-Origin: *');
+    // $file = base64_encode(file_get_contents(Request()->post('file')));
+    $fileName = uniqid().time().'.'.Request()->file('file')->getClientOriginalExtension();
+    Request()->file('file')->move(public_path('images'), $fileName);
+    Storage::put('txt11.txt', json_encode(Request()->file('file')));
+    return response(['payload'=>$fileName]);
+
+});
+Route::post('/upload_multiple_file',function(){
+    header('Access-Control-Allow-Origin: *');
+    $files = [];
+    $counter = 0;
+    // $file = base64_encode(file_get_contents(Request()->post('file')));
+    foreach(Request()->file('files') as $file){
+
+        $fileName = uniqid().time().'.'.$file->getClientOriginalExtension();
+        $file->move(public_path('images'), $fileName);
+        Storage::put('txt11.txt', json_encode(Request()->file('file')));
+        $files[$counter] = $fileName;
+        $counter++;
+    }
+    return response(['payload'=>$files]);
+
 });

@@ -1,5 +1,6 @@
 <template>
-    <div class="w-full h-[100vh] absolute bg-[#eee]">
+    <div class="w-full h-[100vh] absolute bg-[#f5f5f5]">
+        <Header/>
         <!-- {{ $cookies.get('token') }} -->
         <form @submit.prevent="login" class="flex flex-col justify-center items-center gap-[20px] w-[50%] p-[10px] my-[50px] mx-auto bg-[#fff] rounded-md">
             <div class="text-2xl">Login</div>
@@ -21,9 +22,10 @@
 <script>
 import { apiBack } from '../../axios';
 import {mapMutations} from 'vuex';
+import Header from '../../components/dashboard/Header.vue';
 export default {
     name:'LoginView',
-    components:{},
+    components:{Header},
     data() {
         return {
             formData:{
@@ -34,7 +36,7 @@ export default {
         }
     },
     methods: {
-        ...mapMutations(['setToken']),
+        ...mapMutations(['setUser']),
         login(){
             if( !this.validate(this.formData.email,this.formData.password)){
                 this.error = "Email and password are required!"
@@ -48,13 +50,18 @@ export default {
             })
             .then( (response)  => {
                 // console.log(response.data);
-                this.setToken(response.data.accessToken);
+                this.setUser({
+                    token:response.data.accessToken,
+                    id:response.data.user.id,
+                    role:response.data.role,
+                });
                 $cookies.set('token',response.data.accessToken)
                 $cookies.set('role',response.data.roleTitle)
+                $cookies.set('id',response.data.user.id)
                 console.log($cookies.get('token'));
                 if($cookies.get('token') != "" && $cookies.get('role') == 'agent'){
 
-                    this.$router.push({ name: "home"})
+                    this.$router.push({ name: "main"})
                 }
             })
             .catch( (error) => {

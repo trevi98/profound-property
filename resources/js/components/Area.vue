@@ -28,9 +28,9 @@ export default {
         apiBack.get('/locations')
         .then((response) => {
             // handle success
-            console.log(response.data);
-            this.res = response.data.areas;
-            this.areas = response.data.areas;
+            console.log(response.data.payload);
+            this.res = response.data.payload;
+            this.areas = response.data.payload;
         })
         .catch((error) => {
             // handle error

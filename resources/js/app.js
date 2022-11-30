@@ -12,7 +12,11 @@ import '../css/app.css'
 let store = createStore({
     state:{
         test:1,
-        token:'',
+        user:{
+            token:'',
+            id:null,
+            role:null
+        },
         project:{
             title : null,
             price : null,
@@ -27,7 +31,6 @@ let store = createStore({
             completion_date : null,
             starting_date : null,
             area : null,
-            featured : null,
             location_link : null,
             stores : null,
             appartments_in_store : null,
@@ -37,25 +40,49 @@ let store = createStore({
             project_status_id : null,
             location_id : null,
             type_id : null,
+            featured:false,
+            status_id: null,
+        },
+        Nav:{
+            title:'',
+            current:'',
+            prev:null,
+            next:''
         }
     },
     mutations:{
-        setToken(state,payload){
-            state.token = payload;
+        setUser(state,payload){
+            state.user.token = payload.token;
+            state.user.id = payload.id;
+            state.user.role = payload.role;
         },
         setStep1(state,payload){
-            state.title = payload.title;
-            state.price = payload.price;
-            state.description = payload.description;
-            state.dld = payload.dld;
-            state.completion_date = payload.completion_date;
-            state.starting_date = payload.starting_date;
-            state.area = payload.area;
-            state.featured = payload.featured;
-            state.stores = payload.stores;
-            state.appartments_in_store = payload.appartments_in_store;
-            state.number_of_unites_available = payload.number_of_unites_available;
-            state.user_id = payload.user_id;
+            // console.log(payload)
+            state.project.title = payload.title;
+            state.project.price = payload.price;
+            state.project.description = payload.description;
+            state.project.dld = payload.dld;
+            state.project.completion_date = payload.completion_date;
+            state.project.starting_date = payload.starting_date;
+            state.project.area = payload.area;
+            state.project.featured = payload.featured;
+            state.project.stores = payload.stores;
+            state.project.appartments_in_store = payload.appartments_in_store;
+            state.project.number_of_unites_available = payload.number_of_unites_available;
+            state.project.user_id = payload.user_id;
+            state.project.developer_id = payload.developer_id;
+            state.project.type_id = payload.type_id;
+            state.project.status_id = payload.status_id;
+        },
+        setStep2(state,payload){
+            //  .log(payload)
+            state.project.location_id = payload.location_id;
+        },
+        setNav(state,payload){
+            state.Nav.title = payload.title;
+            state.Nav.current = payload.current;
+            state.Nav.prev = payload.prev;
+            state.Nav.next = payload.next;
         }
     }
 })
