@@ -26,6 +26,8 @@
         "vue-template-compiler": "^2.7.14"
     },
     "dependencies": {
+        "@vueform/multiselect": "^2.5.7",
+        "install": "^0.13.0",
         "vue-cookies": "^1.8.2",
         "vue-router": "^4.1.6",
         "vue-server-renderer": "^2.7.14",

@@ -1,7 +1,7 @@
 <template>
     <div class="w-[80%] mx-auto">
         <div class="w-[100%] flex flex-col items-center justify-center gap-[20px]">
-          <label :class="textColor" class="text-2xl">File
+          <label :class="textColor" class="text-2xl">{{ label }}
         </label>
         <div class="flex justify-center text-center">
 
@@ -19,7 +19,7 @@
 <script>
 import { apiBack } from '../../axios';
 export default {
-    props:['name','path','allowed'],
+    props:['name','path','allowed','label'],
     data(){
         return {
             file: '',

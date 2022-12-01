@@ -1,8 +1,16 @@
 <template>
   <div class="w-[80%] mx-auto bg-[#fff] rounded-md py-[20px] mt-[40px]">
-    <UploadeFile @uploaded="uploaded" name="file" path="/upload_file" :allowed="allowed"/>
-    <hr/>
-    <UploadMultipleFiles name="files" path="/upload_multiple_file" :allowed="allowed"/>
+    <UploadeFile @uploaded="uploaded" label="Cover" name="file" path="/upload_file" :allowed="allowedImages"/>
+    <hr class="my-[20px]"/>
+    <UploadeFile @uploaded="uploaded" label="Front view" name="file" path="/upload_file" :allowed="allowedImages"/>
+    <hr class="my-[20px]"/>
+    <UploadeFile @uploaded="uploaded" label="Back view" name="file" path="/upload_file" :allowed="allowedImages"/>
+    <hr class="my-[20px]"/>
+    <UploadeFile @uploaded="uploaded" label="Right view" name="file" path="/upload_file" :allowed="allowedImages"/>
+    <hr class="my-[20px]"/>
+    <UploadeFile @uploaded="uploaded" label="Left view" name="file" path="/upload_file" :allowed="allowedImages"/>
+    <hr class="my-[20px]"/>
+    <UploadMultipleFiles label="label" name="files" path="/upload_multiple_file" :allowed="allowed"/>
     <FormNavigator @nav="nav"/>
   </div>
 </template>
@@ -14,10 +22,11 @@ import { apiBack } from '../../../axios';
 import UploadeFile from '../UploadeFile.vue';
 import UploadMultipleFiles from '../UploadMultipleFiles.vue';
 export default {
-    components:{FormNavigator,UploadeFile,UploadMultipleFiles},
+    components:{FormNavigator,UploadeFile,UploadMultipleFiles },
     data(){
         return {
-            allowed : ['jpg','jpeg','png','svg'],
+            allowedImages : ['jpg','jpeg','png','svg'],
+            allowedFiles : ['jpg','jpeg','png','svg','pdf']
         }
     },
     methods:{

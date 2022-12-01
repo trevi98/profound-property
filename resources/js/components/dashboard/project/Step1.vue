@@ -1,6 +1,7 @@
 <template>
   <div class="w-[80%] mx-auto bg-[#fff] rounded-md py-[20px] mt-[40px]">
     <form action="" class="flex flex-col justify-center items-center gap-[80px] py-[20px]">
+        <MultiSelectVue @passValues="appendTypes"/>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="title" class="w-[80%] mx-auto">Title:</label>
             <input type="text" v-model="formData.title" name="title" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
@@ -86,19 +87,22 @@
 <script>
     import { validate } from '@babel/types';
     import FormNavigator from '../FormNavigator.vue';
-import { mapState, mapMutations } from 'vuex';
+    import { mapState, mapMutations } from 'vuex';
     import { apiBack } from '../../../axios';
+    import MultiSelectVue from '../../MultiSelect.vue';
 
 export default {
 
     components:{
-        FormNavigator
+        FormNavigator,
+        MultiSelectVue
     },
 
     data(){
         return {
+
             developers: null,
-            types: null,
+            types: [],
             statuses: null,
             formData:{
                 title:null,
@@ -114,11 +118,10 @@ export default {
                 number_of_unites_available:null,
                 user_id:$cookies.get('id'),
                 developer_id:null,
-                type_id:null,
+                type_id:[],
                 status_id:null
             }
-        }
-    },
+        }},
     methods:{
         ...mapMutations(['setStep1','setNav']),
         addToState(){
@@ -167,11 +170,16 @@ export default {
             else{
 
             }
+        },
+        appendTypes(vals){
+            // alert('d')
+            this.formData.type_id = vals
         }
 
     },
     computed:{
         ...mapState(['project']),
+
     },
     mounted(){
         this.request('/developers','developers');

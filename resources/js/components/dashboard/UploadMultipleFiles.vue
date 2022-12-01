@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="large-12 medium-12 small-12 cell">
-        <label>Files
+        <label>{{ label }}
           <input type="file" id="files" ref="files" multiple @change="handleFilesUpload()"/>
         </label>
         <button @click="submitFiles()">Submit</button>
@@ -13,10 +13,11 @@
   import { apiBack } from '../../axios';
     export default {
 
-        props:['name','path','allowed'],
+        props:['name','path','allowed','label'],
       /*
         Defines the data used by the component
       */
+    //  props:['label'],
       data(){
         return {
           files: ''
