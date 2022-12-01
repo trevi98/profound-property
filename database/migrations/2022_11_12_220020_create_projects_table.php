@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('price');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->text('cover');
             $table->text('left')->nullable();
             $table->text('right')->nullable();
@@ -26,10 +26,10 @@ class CreateProjectsTable extends Migration
             $table->text('dld')->nullable();
             $table->text('video')->nullable();
             $table->date('completion_date')->nullable();
-            $table->date('starting_date');
+            $table->date('starting_date')->nullable();
             $table->string('area');
             $table->boolean('featured')->default(false);
-            $table->text('location_link');
+            $table->text('location_link')->nullable();
             $table->integer('stores')->nullable();
             $table->integer('appartments_in_store')->nullable();
             $table->integer('number_of_unites_available')->nullable();

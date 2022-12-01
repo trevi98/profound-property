@@ -1,52 +1,59 @@
 <template>
   <div class="w-[80%] mx-auto bg-[#fff] rounded-md py-[20px] mt-[40px]">
     <form action="" class="flex flex-col justify-center items-center gap-[80px] py-[20px]">
-        <MultiSelectVue @passValues="appendTypes"/>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="title" class="w-[80%] mx-auto">Title:</label>
-            <input type="text" v-model="formData.title" name="title" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="text" v-model="formData.title" name="title" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
+        </div>
+        <div class="flex flex-col justify-center items-start gap-[15px] w-full">
+            <label for="location_link" class="w-[80%] mx-auto">Location link:</label>
+            <input type="text" v-model="formData.locationLink" name="location_link" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="description" class="w-[80%] mx-auto">Description:</label>
-            <textarea  name="description" v-model="formData.description" class="h-[100px] border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto"></textarea>
+            <textarea  name="description" v-model="formData.description" class="h-[140px] border-[1px] border-[#a09999d8] bg-[#fff] border-solid w-[80%] mx-auto"></textarea>
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="price" class="w-[80%] mx-auto">Starting price:</label>
-            <input type="number" name="price" v-model="formData.price" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="number" name="price" v-model="formData.price" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
+        </div>
+        <div class="flex flex-col justify-center items-start gap-[15px] w-full">
+            <label for="bathrooms" class="w-[80%] mx-auto">Bathrooms:</label>
+            <input type="number" name="bathrooms" v-model="formData.bathrooms" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="area" class="w-[80%] mx-auto">Area:</label>
-            <input type="number" name="area" v-model="formData.area" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="number" name="area" v-model="formData.area" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="number_of_unites_available" class="w-[80%] mx-auto">Number of unites available:</label>
-            <input type="number" name="number_of_unites_available" v-model="formData.number_of_unites_available" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="number" name="number_of_unites_available" v-model="formData.number_of_unites_available" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="stores" class="w-[80%] mx-auto">Number of stores:</label>
-            <input type="number" name="stores" v-model="formData.stores" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="number" name="stores" v-model="formData.stores" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="appartments" class="w-[80%] mx-auto">Number of appartments in store:</label>
-            <input type="number" name="appartments" v-model="formData.appartments_in_store" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="number" name="appartments" v-model="formData.appartments_in_store" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="dld" class="w-[80%] mx-auto">Dld waver:</label>
-            <textarea name="dld" v-model="formData.dld" class="h-[100px] border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto"></textarea>
+            <textarea name="dld" v-model="formData.dld" class="h-[140px] border-[1px] border-[#a09999d8] bg-[#fff] border-solid w-[80%] mx-auto"></textarea>
         </div>
 
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="starting_date" class="w-[80%] mx-auto">Starting date:</label>
-            <input type="date" name="starting_date"  v-model="formData.starting_date" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="date" name="starting_date"  v-model="formData.starting_date" class="border-[1px] border-[#a09999d8] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="completion_date" class="w-[80%] mx-auto">Completion date:</label>
-            <input type="date" name="completion_date" v-model="formData.completion_date" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto h-[30px] p-[10px]">
+            <input type="date" name="completion_date" v-model="formData.completion_date" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
 
         <div class="flex justify-start items-center gap-[20px] w-[80%] mx-auto">
             <label for="feature" class="">Feature this project? </label>
-            <input type="checkbox" v-model="formData.featured" name="feature" class=" h-[30px] p-[10px]">
+            <input type="checkbox" v-model="formData.featured" name="feature" class=" p-[10px]">
         </div>
 
 
@@ -54,7 +61,7 @@
 
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="developers" class="w-[80%] mx-auto">Developer: </label>
-            <select v-model="formData.developer_id" name="developers" id="" v-if="developers" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto">
+            <select v-model="formData.developer_id" name="developers" id="" v-if="developers" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto">
                 <option value="none" selected disabled>Select a developer</option>
 
                 <option v-for="developer in developers" :key="developer.id" :value="developer.id">{{ developer.title }}</option>
@@ -63,7 +70,7 @@
 
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="Types" class="w-[80%] mx-auto">Project type: </label>
-            <select name="Types" id="" v-if="types" v-model="formData.type_id" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto">
+            <select name="Types" id="" v-if="types" v-model="formData.type_id" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto">
                 <option value="none" selected disabled>Select a type</option>
 
                 <option v-for="type in types" :key="type.id" :value=" type.id ">{{ type.title }}</option>
@@ -72,11 +79,16 @@
 
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="status" class="w-[80%] mx-auto">Project status: </label>
-            <select name="status" id="" v-if="statuses"  v-model="formData.status_id" class="border-b-[1px] border-r-[1px] border-l-[1px] border-[#555] border-solid w-[80%] mx-auto">
+            <select name="status" id="" v-if="statuses"  v-model="formData.status_id" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto">
                 <option value="none" selected disabled>Select a type</option>
 
                 <option v-for="status in statuses" :key="status.id" :value="status.id">{{ status.title }}</option>
             </select>
+        </div>
+
+        <div class="flex flex-col justify-center items-start gap-[15px] w-[80%] mx-auto">
+            <label for="status" class="w-full mx-auto">Available units: </label>
+            <MultiSelectVue :prevSelections="formData.availableUnites" @passValues="addAvailableUnites" path="/types"/>
         </div>
 
     </form>
@@ -102,7 +114,7 @@ export default {
         return {
 
             developers: null,
-            types: [],
+            types: null,
             statuses: null,
             formData:{
                 title:null,
@@ -118,8 +130,11 @@ export default {
                 number_of_unites_available:null,
                 user_id:$cookies.get('id'),
                 developer_id:null,
-                type_id:[],
-                status_id:null
+                type_id:null,
+                bathrooms:null,
+                status_id:null,
+                availableUnites:[],
+                locationLink:null
             }
         }},
     methods:{
@@ -131,8 +146,10 @@ export default {
         initiate(){
             if(this.project.title != null){
                 this.formData.title = this.project.title
+                this.formData.locationLink = this.project.locationLink
                 this.formData.description = this.project.description
                 this.formData.price = this.project.price
+                this.formData.bathrooms = this.project.bathrooms
                 this.formData.dld = this.project.dld
                 this.formData.completion_date = this.project.completion_date
                 this.formData.starting_date = this.project.starting_date
@@ -145,7 +162,16 @@ export default {
                 this.formData.developer_id = this.project.developer_id
                 this.formData.type_id = this.project.type_id
                 this.formData.status_id = this.project.status_id
+                this.formData.availableUnites = this.project.availableUnites
             }
+        },
+
+        addAvailableUnites(unites){
+            this.formData.availableUnites = unites;
+        },
+
+        appendToType(types){
+            
         },
 
         request(path,val){
@@ -161,7 +187,7 @@ export default {
             this.addToState();
             if(val == 'next'){
                 this.setNav({
-                    title: 'Add project - step 2 | select area |',
+                    title: 'Add project - step 2 | Select area |',
                     current: 'step2',
                     prev: 'step1',
                     next: 'step3'
@@ -171,10 +197,7 @@ export default {
 
             }
         },
-        appendTypes(vals){
-            // alert('d')
-            this.formData.type_id = vals
-        }
+
 
     },
     computed:{

@@ -6,7 +6,9 @@
   :searchable="false"
   :create-option="false"
   :options="options"
-@change="passValues" />
+  :required="true"
+  ref="multiselect"
+  @change="passValues" />
 
   </template>
 
@@ -15,23 +17,31 @@
     import { apiBack } from '../axios'
 
     export default {
+        props:['prevSelections','path'],
       components: {
         Multiselect,
       },
       data() {
         return {
           value: null,
-          options:[]
+          options:[],
+          selected:null,
+        //   multiselect:null
         }
       },
       mounted(){
-        apiBack.get('/types')
+        apiBack.get(this.path)
         .then((response) => {
             // this.value = response.data.payload;
             response.data.payload.forEach(type => {
                 let temp = {'value':type.id,'label':type.title};
                 this.options.push(temp)
             })
+            this.prevSelections.forEach(option => {
+
+                this.$refs.multiselect.select(option)
+            })
+            console.log('selected',this.prevSelections,"*")
             console.log(response.data.payload)
         })
         .catch((error) => {

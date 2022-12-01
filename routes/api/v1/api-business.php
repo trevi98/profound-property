@@ -3,6 +3,7 @@
 use App\Models\Developer;
 use App\Models\Location;
 use App\Models\Project_status;
+use App\Models\Size;
 use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -67,6 +68,9 @@ Route::get('/developers',function(){
 });
 Route::get('/types',function(){
     return response(['payload'=>Type::all()]);
+});
+Route::get('/sizes',function(){
+    return response(['payload'=>Size::where('size_id',Request()->get('type_id'))]);
 });
 Route::get('/project-status',function(){
     return response(['payload'=>Project_status::all()]);

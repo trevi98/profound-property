@@ -11,9 +11,12 @@
                 </div>
             </div>
         </div>
+        <div class="w-[90%] mx-auto">
+
+            <FormNavigator @nav="nav"/>
+        </div>
     </div>
 
-   <FormNavigator @nav="nav"/>
 </template>
 
 <script>
@@ -83,7 +86,7 @@ export default {
             this.addToState();
             if(val == 'next'){
                 this.setNav({
-                    title: 'Add project - step 3 | upload images and files |',
+                    title: 'Add project - step 3 | Available units |',
                     current: 'step3',
                     prev: 'step2',
                     next: 'step4'
@@ -92,7 +95,7 @@ export default {
             else{
                 // this.addToState();
                 this.setNav({
-                    title: 'Add project - step 1 | basic info |',
+                    title: 'Add project - step 1 | Basic info |',
                     current: 'step1',
                     prev: null,
                     next: 'step2'

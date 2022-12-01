@@ -19,10 +19,12 @@ class CreatePropertiesTable extends Migration
             $table->string('price');
             $table->text('description');
             $table->text('cover');
+            $table->text('location_link')->nullable();
             $table->text('video')->nullable();
-            $table->integer('bathrooms');
-            $table->string('permit_number');
-            $table->string('property_name');
+            $table->integer('bathrooms')->default(0);
+            $table->integer('bedrooms')->default(0);
+            $table->string('permit_number')->nullable();
+            $table->string('property_name')->nullable();
             $table->boolean('featured')->default(false);
             $table->boolean('sold')->default(false);
             $table->string('area');
@@ -30,7 +32,7 @@ class CreatePropertiesTable extends Migration
             $table->foreignId('user_id')->nullOnDelete();
             $table->foreignId('location_id')->nullOnDelete();
             $table->foreignId('type_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('size_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreignId('size_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

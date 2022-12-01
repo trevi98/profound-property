@@ -5,6 +5,7 @@
         <Step1 v-if="$store.state.Nav.current =='step1'"/>
         <Step2 v-else-if="$store.state.Nav.current == 'step2'"/>
         <Step3 v-else-if="$store.state.Nav.current == 'step3'"/>
+        <Step4 v-else-if="$store.state.Nav.current == 'step4'"/>
 
         <!-- <FormNavigator/> -->
     </div>
@@ -14,12 +15,13 @@
 import Step1 from '../../components/dashboard/project/Step1.vue';
 import Step2 from '../../components/dashboard/project/Step2.vue';
 import Step3 from '../../components/dashboard/project/Step3.vue';
+import Step4 from '../../components/dashboard/project/Step4.vue';
 import Header from '../../components/dashboard/Header.vue';
 import { mapMutations } from 'vuex';
 
 // import FormNavigator from '../../components/dashboard/FormNavigator.vue';
 export default {
-    components:{Step1,Step2,Step3,Header},
+    components:{Step1,Step2,Step3,Step4,Header},
     methods:{
         ...mapMutations(['setNav']),
     },

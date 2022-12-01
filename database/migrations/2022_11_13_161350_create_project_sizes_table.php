@@ -16,7 +16,7 @@ class CreateProjectSizesTable extends Migration
         Schema::create('project_sizes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id')->constrained()->onDelete('cascade');
-            $table->foreignId('size_id')->constrained()->onDelete('cascade');
+            $table->integer('bedrooms')->default(0);
             $table->foreignId('type_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
