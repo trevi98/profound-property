@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function properties(){
+        return $this->hasMany(Property::class);
+    }
+
+    public function project_size(){
+        return $this->hasMany(Size::class);
+    }
 }

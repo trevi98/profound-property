@@ -44,4 +44,16 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo(Role::class);
     }
+
+    public function customer_viewing(){
+        return $this->hasOne(Viewing::class);
+    }
+
+    public function agent_viewings(){
+        return $this->hasMany(Viewing::class);
+    }
+
+    public function properties(){
+        return $this->hasMany(Property::class);
+    }
 }
