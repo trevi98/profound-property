@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Select;
 use App\Models\Role;
 use Waynestate\Nova\CKEditor4Field\CKEditor;
@@ -93,11 +94,14 @@ class Property extends Resource
            
             hasMany::make('Viewings','viewings'),
             
-            Image::make('Cover Image')->hideFromIndex()
-            ->disk('public')->path('images'),
+            BelongsToMany::make('Amenity', 'amenity','\App\Nova\Amenity'),
+
+            BelongsToMany::make('Community_amenity'),
+            Image::make('Cover Image','cover')->hideFromIndex()
+            ->disk('userimages'),
 
             File::make('Video')->nullable()->hideFromIndex()
-            ->disk('public')->path('images'),
+            ->disk('userimages'),
             
             Boolean::make('Featured'),
 

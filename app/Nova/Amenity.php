@@ -5,24 +5,15 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\File;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Trix;
-use Waynestate\Nova\CKEditor4Field\CKEditor;
-// use Waynestate\Nova\CKEditor;
-// use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 
-
-
-class Post extends Resource
+class Amenity extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Post::class;
+    public static $model = \App\Models\Amenity::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -50,19 +41,6 @@ class Post extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-        
-            Text::make('title'),
-
-            Trix::make('description')->withFiles('userimages'),
-            // CkEditor::make('Description','description') ,
-            // NovaTinyMCE :: make ('description') ,
-
-            Image::make('Cover Image','cover')->hideFromIndex()
-            ->disk('userimages'),
-        
-            File::make('Video')->nullable()->hideFromIndex()
-            ->disk('userimages'),
-                
         ];
     }
 

@@ -50,10 +50,6 @@ class Property extends Model
         return $this->belongsTo(Type::class);
     }
     
-    public function size(){
-        return $this->belongsTo(Size::class);
-    }
-
 //many to many
     public function amenities(){
         return $this->belongsToMany(Aminity::Class);
