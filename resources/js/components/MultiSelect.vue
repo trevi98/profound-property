@@ -38,7 +38,6 @@
                 this.options.push(temp)
             })
             this.prevSelections.forEach(option => {
-
                 this.$refs.multiselect.select(option)
             })
             console.log('selected',this.prevSelections,"*")

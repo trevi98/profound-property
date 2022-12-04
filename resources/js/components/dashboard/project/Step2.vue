@@ -1,15 +1,18 @@
 <template>
    <div class="w-full min-h-[100vh] bg-[#f5f5f5]">
         <div class="w-[80%] mx-auto py-[20px]">
-            <input type="text" name="" id="" @keyup="filter" v-model="search" placeholder="search" class="border-b-[1px] border-[#a6a4a4] border-solid">
+            <input type="text" name="" id="" @keyup="filter" v-model="search" placeholder="search" class="border-[2px] w-full border-[#a6a4a4] border-solid p-[10px] h-[30px]">
         </div>
-        <div v-if="areas" class="flex w-[80%] mx-auto justify-center items-center flex-wrap gap-[10px] my-[10px]">
-            <div v-for="area in areas" :key="area.id" class="toselect border-[2px]  hover:cursor-pointer w-[200px] h-[200px] flex justify-center items-center bg-[#fff]" @click="select" :id="'main-'+area.id">
-                <div :id="area.id" @click.self.stop="selectChiled">
+        <div class="min-h-[100vh]">
+            <div v-if="areas" class="flex w-[80%] mx-auto justify-center items-center flex-wrap gap-[10px] my-[10px]">
+                <div v-for="area in areas" :key="area.id" class="toselect border-[4px] rounded-sm hover:cursor-pointer w-[200px] h-[200px] flex justify-center items-center bg-[#fff]" @click="select" :id="'main-'+area.id">
+                    <div :id="area.id" @click.self.stop="selectChiled">
 
-                    {{ area.title }}
+                        {{ area.title }}
+                    </div>
                 </div>
             </div>
+
         </div>
         <div class="w-[90%] mx-auto">
 
@@ -25,6 +28,7 @@
     import { apiBack } from '../../../axios';
 export default {
     components: { FormNavigator },
+    props:['areasProp'],
     data(){
         return {
             areas: null,
@@ -53,11 +57,11 @@ export default {
 
         bindToArea(){
             document.querySelectorAll('.toselect').forEach((elmnt)=>{
-                elmnt.classList.remove('border-[#000]')
+                elmnt.classList.remove('border-[#0b3841]')
             })
             // console.log(`#main-${this.formData.location_id}`)
             // console.log(document.querySelector(`#main-${this.formData.location_id}`))
-            document.querySelector(`#main-${this.formData.location_id}`).classList.add('border-[#000]')
+            document.querySelector(`#main-${this.formData.location_id}`).classList.add('border-[#0b3841]')
         },
 
 
@@ -70,16 +74,16 @@ export default {
         },
         select($event){
             document.querySelectorAll('.toselect').forEach((elmnt)=>{
-                elmnt.classList.remove('border-[#000]')
+                elmnt.classList.remove('border-[#0b3841]')
             })
-            $event.target.classList.add('border-[#000]')
+            $event.target.classList.add('border-[#0b3841]')
             this.formData.location_id = $event.target.id.substr(5);
         },
         selectChiled($event){
             document.querySelectorAll('.toselect').forEach((elmnt)=>{
-                elmnt.classList.remove('border-[#000]')
+                elmnt.classList.remove('border-[#0b3841]')
             })
-            $event.target.parentElement.classList.add('border-[#000]');
+            $event.target.parentElement.classList.add('border-[#0b3841]');
             this.formData.location_id = $event.target.id;
         },
         nav(val){
@@ -104,17 +108,19 @@ export default {
         }
     },
     mounted(){
-        apiBack.get('/locations')
-        .then((response) => {
-            // handle success
-            // console.log(response.data);
-            this.res = response.data.payload;
-            this.areas = response.data.payload;
+        let myPromise = new Promise((myResolve, myReject) =>{
+            // "Producing Code" (May take some time)
+            this.res = this.areasProp;
+            this.areas = this.areasProp;
+
+            myResolve(); // when successful
+            myReject();  // when error
+        });
+        myPromise.then(()=>{
+
             this.initiate()
-        })
-        .catch((error) => {
-            // handle error
-            console.log(error);
+        }).catch((error) => {
+            console.log(error)
         })
 
     },

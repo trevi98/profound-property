@@ -2,6 +2,9 @@
 
 use App\Models\Developer;
 use App\Models\Location;
+use App\Models\Payment_plan;
+use App\Models\Project;
+use App\Models\Project_img;
 use App\Models\Project_status;
 use App\Models\Size;
 use App\Models\Type;
@@ -98,5 +101,83 @@ Route::post('/upload_multiple_file',function(){
         $counter++;
     }
     return response(['payload'=>$files]);
+
+});
+Route::post('/create_project',function(){
+    $project = null;
+    try{
+
+        $project = Project::create([
+            "title" => Request()->post('title'),
+            "price" => Request()->post('price'),
+            "description" => Request()->post('description'),
+            "cover" => Request()->post('cover'),
+            "left" => Request()->post('left'),
+            "right" => Request()->post('right'),
+            "front" => Request()->post('front'),
+            "back" => Request()->post('back'),
+            "dld" => Request()->post('dld'),
+            "video" => Request()->post('video'),
+            "completion_date" => Request()->post('completion_date'),
+            "starting_date" => Request()->post('starting_date'),
+            "area" => Request()->post('area'),
+            "featured" => Request()->post('featured'),
+            "location_link" => Request()->post('locationLink'),
+            "stores" => Request()->post('stores'),
+            "appartments_in_store" => Request()->post('appartments_in_store'),
+            "number_of_unites_available" => Request()->post('number_of_unites_available'),
+            "user_id" => Request()->post('user_id'),
+            "developer_id" => Request()->post('developer_id'),
+            "project_status_id" => Request()->post('status_id'),
+            "location_id" => Request()->post('location_id'),
+            "type_id" => Request()->post('type_id')
+        ]);
+    }catch(Exception $e){
+        return response(['payload'=>$e]);
+
+    }
+
+    try{
+
+        foreach(Request()->post('paymenPlans') as $payment){
+            Payment_plan::create( ['title'=>$payment['title'],'pricentage'=>$payment['precentages'],'project_id'=>$project->id]);
+        }
+
+    }catch(Exception $e){
+        return response(['payload'=>$e]);
+
+    }
+
+    if(count(Request()->post('images')) > 0){
+
+        try{
+
+            foreach(Request()->post('images') as $image){
+                Project_img::create( ['img'=>$image,'project_id'=>$project->id]);
+            }
+
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
+
+        }
+    }
+
+    if(Request()->post('right') != null){
+
+        try{
+
+            foreach(Request()->post('images') as $image){
+                Project_img::create( ['img'=>$image,'project_id'=>$project->id]);
+            }
+
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
+
+        }
+    }
+
+
+
+    return response(['payload'=>$project->id]);
 
 });

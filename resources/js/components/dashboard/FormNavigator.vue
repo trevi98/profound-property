@@ -7,7 +7,7 @@
         </div>
         <div class="h-[40px] w-[80px] bg-[#0b3841] text-[#fff] rounded-sm text-lg flex justify-center items-center cursor-pointer"  @click="next">
             <div>
-                Next
+                {{ Next }}
             </div>
         </div>
     </div>
@@ -16,9 +16,10 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+    props:['submit'],
     data(){
         return{
-            
+            Next: 'Next'
         }
     },
     methods:{
@@ -38,6 +39,11 @@ export default {
                 return false
             }
         }),
+    },
+    mounted(){
+        if(this.submit == true){
+            this.Next = 'Submit'
+        }
     }
 
 }

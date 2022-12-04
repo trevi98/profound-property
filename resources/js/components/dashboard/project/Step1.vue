@@ -38,6 +38,10 @@
             <input type="number" name="appartments" v-model="formData.appartments_in_store" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
         </div>
         <div class="flex flex-col justify-center items-start gap-[15px] w-full">
+            <label for="appartments" class="w-[80%] mx-auto">How many payment installments? </label>
+            <input type="number" name="appartments" v-model="formData.installments" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
+        </div>
+        <div class="flex flex-col justify-center items-start gap-[15px] w-full">
             <label for="dld" class="w-[80%] mx-auto">Dld waver:</label>
             <textarea name="dld" v-model="formData.dld" class="h-[140px] border-[1px] border-[#a09999d8] bg-[#fff] border-solid w-[80%] mx-auto"></textarea>
         </div>
@@ -97,7 +101,7 @@
 </template>
 
 <script>
-    import { validate } from '@babel/types';
+    // import { validate } from '@babel/types';
     import FormNavigator from '../FormNavigator.vue';
     import { mapState, mapMutations } from 'vuex';
     import { apiBack } from '../../../axios';
@@ -134,7 +138,8 @@ export default {
                 bathrooms:null,
                 status_id:null,
                 availableUnites:[],
-                locationLink:null
+                locationLink:null,
+                installments:null
             }
         }},
     methods:{
@@ -163,6 +168,7 @@ export default {
                 this.formData.type_id = this.project.type_id
                 this.formData.status_id = this.project.status_id
                 this.formData.availableUnites = this.project.availableUnites
+                this.formData.installments = this.project.installments
             }
         },
 
@@ -171,13 +177,19 @@ export default {
         },
 
         appendToType(types){
-            
+            types.forEach(type => {
+
+                this.type[type.id] = type.title
+            });
         },
 
         request(path,val){
             apiBack.get(path)
             .then((response) => {
                 this[val] = response.data.payload;
+                if(path == 'types'){
+                    this.appendToType(response.data.payload);
+                }
             })
             .catch((error) => {
                 console.log(error);
