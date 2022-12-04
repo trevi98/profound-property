@@ -26501,6 +26501,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         bathrooms: null,
         status_id: null,
         availableUnites: [],
+        amenities: [],
+        comunityAmenities: [],
         locationLink: null,
         installments: null
       }
@@ -26531,11 +26533,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.formData.type_id = this.project.type_id;
         this.formData.status_id = this.project.status_id;
         this.formData.availableUnites = this.project.availableUnites;
+        this.formData.amenities = this.project.amenities;
+        this.formData.comunityAmenities = this.project.comunityAmenities;
         this.formData.installments = this.project.installments;
       }
     },
     addAvailableUnites: function addAvailableUnites(unites) {
       this.formData.availableUnites = unites;
+    },
+    addAmenities: function addAmenities(amenities) {
+      this.formData.amenities = amenities;
+    },
+    addComunityAmenities: function addComunityAmenities(comunityAmenities) {
+      this.formData.comunityAmenities = comunityAmenities;
     },
     appendToType: function appendToType(types) {
       var _this = this;
@@ -26571,6 +26581,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.request('/developers', 'developers');
     this.request('/types', 'types');
     this.request('/project-status', 'statuses');
+    // this.request('/amenities','amenities');
+    // this.request('/comunity-amenities','communityAmenities');
     this.initiate();
   }
 });
@@ -27910,6 +27922,20 @@ var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "for": "status",
   "class": "w-full mx-auto"
 }, "Available units: ", -1 /* HOISTED */);
+var _hoisted_45 = {
+  "class": "flex flex-col justify-center items-start gap-[15px] w-[80%] mx-auto"
+};
+var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "amenities",
+  "class": "w-full mx-auto"
+}, "Amenities: ", -1 /* HOISTED */);
+var _hoisted_47 = {
+  "class": "flex flex-col justify-center items-start gap-[15px] w-[80%] mx-auto"
+};
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "comunityamenities",
+  "class": "w-full mx-auto"
+}, "Community amenities: ", -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_MultiSelectVue = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MultiSelectVue");
@@ -28053,6 +28079,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     prevSelections: $data.formData.availableUnites,
     onPassValues: $options.addAvailableUnites,
     path: "/types"
+  }, null, 8 /* PROPS */, ["prevSelections", "onPassValues"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [_hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MultiSelectVue, {
+    prevSelections: $data.formData.amenities,
+    onPassValues: $options.addAmenities,
+    path: "/amenities"
+  }, null, 8 /* PROPS */, ["prevSelections", "onPassValues"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MultiSelectVue, {
+    prevSelections: $data.formData.comunityAmenities,
+    onPassValues: $options.addComunityAmenities,
+    path: "/comunity_amenities"
   }, null, 8 /* PROPS */, ["prevSelections", "onPassValues"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormNavigator, {
     onNav: $options.nav
   }, null, 8 /* PROPS */, ["onNav"])]);
@@ -28651,6 +28685,8 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
       type_id: null,
       locationLink: null,
       availableUnites: [],
+      amenities: [],
+      comunityAmenities: [],
       floorPlans: {},
       floor3ds: {},
       images: [],
@@ -28700,6 +28736,8 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
       state.project.type_id = payload.type_id;
       state.project.status_id = payload.status_id;
       state.project.availableUnites = payload.availableUnites;
+      state.project.amenities = payload.amenities;
+      state.project.comunityAmenities = payload.comunityAmenities;
       state.project.installments = payload.installments;
     },
     setStep2: function setStep2(state, payload) {

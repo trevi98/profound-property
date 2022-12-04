@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f25f98b270637a4c449f17d0a9b06722dbe6b4d9',
+        'reference' => 'ce728f394ef72fca467f1d6b577ef200f0f72b4a',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -499,7 +499,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f25f98b270637a4c449f17d0a9b06722dbe6b4d9',
+            'reference' => 'ce728f394ef72fca467f1d6b577ef200f0f72b4a',
             'dev_requirement' => false,
         ),
         'laravel/nova' => array(
@@ -508,7 +508,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/nova',
             'aliases' => array(),
-            'reference' => 'd23a50b598fa7227ec755a1a9deeb05d059214cb',
+            'reference' => '16e1b68b0cd5131db3e6c3c967b254ff5750eee0',
             'dev_requirement' => false,
         ),
         'laravel/passport' => array(
@@ -994,8 +994,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

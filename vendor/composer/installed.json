@@ -2451,7 +2451,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "d23a50b598fa7227ec755a1a9deeb05d059214cb"
+                "reference": "16e1b68b0cd5131db3e6c3c967b254ff5750eee0"
             },
             "require": {
                 "brick/money": "^0.5.0",

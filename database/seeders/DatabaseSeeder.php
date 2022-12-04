@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             LocationSeeder::class,
             SizeSeeder::class,
             ProjectSeeder::class,
+            AmenitySeeder::class,
+            Community_amenitySeeder::class,
         ]);
     }
 }

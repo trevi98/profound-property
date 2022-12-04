@@ -42,6 +42,8 @@ let store = createStore({
             type_id : null,
             locationLink:null,
             availableUnites:[],
+            amenities:[],
+            comunityAmenities:[],
             floorPlans:{},
             floor3ds:{},
             images:[],
@@ -89,6 +91,8 @@ let store = createStore({
             state.project.type_id = payload.type_id;
             state.project.status_id = payload.status_id;
             state.project.availableUnites = payload.availableUnites;
+            state.project.amenities = payload.amenities;
+            state.project.comunityAmenities = payload.comunityAmenities;
             state.project.installments = payload.installments;
         },
         setStep2(state,payload){
