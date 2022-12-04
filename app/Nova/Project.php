@@ -11,9 +11,13 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\hasMany;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Number;
-
+use Laravel\Nova\Fields\HasManyThrough;
+use Auth;
 class Project extends Resource
 {
     /**
@@ -52,17 +56,15 @@ class Project extends Resource
 
             Text::make('Title'),
             
-            Text::make('Price', 'price', function () {
-                return !is_null($this->price) ? number_format($this->price, 2, '.', ',') : 0;
-            }),
+            Text::make('Price')->rules('required' , 'min:0' ,'numeric'),
 
-            Text::make('Area'),
+            Text::make('Area')->rules('required','numeric','min:0'),
           
-            Number::make('Stores'),
+            Number::make('Stores')->rules('required','min:0'),
 
-            Number::make('Appartments in store','appartments_in_store'),
+            Number::make('Appartments in store','appartments_in_store')->rules('required','min:0'),
             
-            Number::make('Number of unites available','number_of_unites_available'),
+            Number::make('Number of unites available','number_of_unites_available')->rules('required','min:0'),
 
             Textarea::make('Description'),
            
@@ -94,10 +96,47 @@ class Project extends Resource
             File::make('Video')->nullable()->hideFromIndex()
             ->disk('userimages'),
            
-            belongsTo::make('Developer'),
+            belongsTo::make('Developer') 
+            ->display(function($developer){
+                return $developer->title;
+            })->rules('required'),
             
-            belongsTo::make('Location'),
+            belongsTo::make('Location')
+            ->display(function($location){
+                return $location->title;
+            })->rules('required'),
+            
+            belongsTo::make('Status', 'project_status','\App\Nova\ProjectStatus')
+            ->display(function($status){
+                return $status->title;
+            })->rules('required'),
+            // belongsTo::make('project_status')
+            // ->display(function($status){
+            //     return $status->title;
+            // })->rules('required'),
         
+            // BelongsTo::make('Agent', 'user','\App\Nova\User')->withMeta([
+            //     'belongsToId' => Auth::id()  // default value for the select
+            // ])->readOnly(),
+
+            Hidden::make('User', 'user_id')->default(function ($request) {
+                return Auth::id();
+            }),
+
+            hasMany::make('payment_plans'),
+            
+            hasMany::make('project_size'),
+
+            hasMany::make('project_img'),
+            
+            hasMany::make('Near locations','near_locations'),
+
+            HasManyThrough::make('Type'),
+
+            belongsToMany::make('Amenity'),
+
+            belongsToMany::make('Community_amenity'),
+            
             Boolean::make('featured'),
 
             

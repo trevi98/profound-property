@@ -5,6 +5,9 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\TextArea;
+use Laravel\Nova\Fields\Image;
 
 class Developer extends Resource
 {
@@ -41,6 +44,13 @@ class Developer extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+        
+            Text::make('Title'),
+
+            Textarea::make('About'),
+            Image::make('Cover Image','cover')->hideFromIndex()
+            ->disk('userimages'),
+
         ];
     }
 

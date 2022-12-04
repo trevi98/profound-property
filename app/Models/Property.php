@@ -52,7 +52,7 @@ class Property extends Model
     
 //many to many
     public function amenities(){
-        return $this->belongsToMany(Aminity::Class);
+        return $this->belongsToMany(Amenity::Class);
     }
 
     public function community_amenities(){
