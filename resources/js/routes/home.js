@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/dashboard/LoginView.vue'
 import MainView from '../views/dashboard/MainView.vue'
 import AddProjectView from '../views/dashboard/AddProjectView.vue'
+import ListProjectsView from '../views/dashboard/ListProjectsView.vue'
 import Test from '../views/dashboard/Test.vue'
 
 const routes = [
@@ -27,9 +28,9 @@ const routes = [
     component:AddProjectView
   },
   {
-    path:'/areas',
-    name:'areas',
-    component:Test
+    path:'/list-projects',
+    name:'ListProjects',
+    component:ListProjectsView
   },
 
 

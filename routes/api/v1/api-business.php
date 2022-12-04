@@ -86,6 +86,20 @@ Route::get('/sizes',function(){
 Route::get('/project-status',function(){
     return response(['payload'=>Project_status::all()]);
 });
+Route::get('/projects',function(){
+    $projects = Project::all();
+    $res = [];
+    $counter = 0;
+    foreach($projects as $project){
+        $res[$counter] = [
+            'title' => $project->title,
+            'developer' => $project->developer->title,
+            'id' => $project->id,
+        ];
+        $counter++;
+    }
+    return response(['payload'=>$res]);
+});
 Route::post('/upload_file',function(){
     header('Access-Control-Allow-Origin: *');
     // $file = base64_encode(file_get_contents(Request()->post('file')));
@@ -204,4 +218,11 @@ Route::post('/create_project',function(){
 
     return response(['payload'=>Request()->post()]);
 
+});
+
+
+
+Route::post('/delete_projects',function(){
+    Project::where('id',Request()->post('id'))->delete();
+    return response(['payload'=>'done']);
 });
