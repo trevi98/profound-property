@@ -95,6 +95,16 @@
             <MultiSelectVue :prevSelections="formData.availableUnites" @passValues="addAvailableUnites" path="/types"/>
         </div>
 
+        <div class="flex flex-col justify-center items-start gap-[15px] w-[80%] mx-auto">
+            <label for="amenities" class="w-full mx-auto">Amenities: </label>
+            <MultiSelectVue :prevSelections="formData.amenities" @passValues="addAmenities" path="/amenities"/>
+        </div>
+
+        <div class="flex flex-col justify-center items-start gap-[15px] w-[80%] mx-auto">
+            <label for="comunityamenities" class="w-full mx-auto">Community amenities: </label>
+            <MultiSelectVue :prevSelections="formData.comunityAmenities" @passValues="addComunityAmenities" path="/comunity_amenities"/>
+        </div>
+
     </form>
     <FormNavigator @nav="nav" />
   </div>
@@ -138,6 +148,8 @@ export default {
                 bathrooms:null,
                 status_id:null,
                 availableUnites:[],
+                amenities:[],
+                comunityAmenities:[],
                 locationLink:null,
                 installments:null
             }
@@ -168,12 +180,22 @@ export default {
                 this.formData.type_id = this.project.type_id
                 this.formData.status_id = this.project.status_id
                 this.formData.availableUnites = this.project.availableUnites
+                this.formData.amenities = this.project.amenities
+                this.formData.comunityAmenities = this.project.comunityAmenities
                 this.formData.installments = this.project.installments
             }
         },
 
         addAvailableUnites(unites){
             this.formData.availableUnites = unites;
+        },
+
+        addAmenities(amenities){
+            this.formData.amenities = amenities;
+        },
+
+        addComunityAmenities(comunityAmenities){
+            this.formData.comunityAmenities = comunityAmenities;
         },
 
         appendToType(types){
@@ -220,6 +242,8 @@ export default {
         this.request('/developers','developers');
         this.request('/types','types');
         this.request('/project-status','statuses');
+        // this.request('/amenities','amenities');
+        // this.request('/comunity-amenities','communityAmenities');
         this.initiate()
 
     },

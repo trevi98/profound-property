@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Amenity;
+use App\Models\Community_amenity;
 use App\Models\Developer;
 use App\Models\Location;
 use App\Models\Payment_plan;
@@ -71,6 +73,12 @@ Route::get('/developers',function(){
 });
 Route::get('/types',function(){
     return response(['payload'=>Type::all()]);
+});
+Route::get('/amenities',function(){
+    return response(['payload'=>Amenity::all()]);
+});
+Route::get('/comunity_amenities',function(){
+    return response(['payload'=>Community_amenity::all()]);
 });
 Route::get('/sizes',function(){
     return response(['payload'=>Size::where('size_id',Request()->get('type_id'))]);
@@ -162,22 +170,38 @@ Route::post('/create_project',function(){
         }
     }
 
-    if(Request()->post('right') != null){
+    // if(count(Request()->post('amenities')) > 0){
 
-        try{
+    //     try{
 
-            foreach(Request()->post('images') as $image){
-                Project_img::create( ['img'=>$image,'project_id'=>$project->id]);
-            }
+    //         foreach(Request()->post('amenities') as $amenity){
+    //             Project_img::create( ['title'=>$amenity,'project_id'=>$project->id]);
+    //         }
 
-        }catch(Exception $e){
-            return response(['payload'=>$e]);
+    //     }catch(Exception $e){
+    //         return response(['payload'=>$e]);
 
-        }
-    }
+    //     }
+    // }
+
+    // if(Request()->post('right') != null){
+
+    //     try{
+
+    //         foreach(Request()->post('images') as $image){
+    //             Project_img::create( ['img'=>$image,'project_id'=>$project->id]);
+    //         }
+
+    //     }catch(Exception $e){
+    //         return response(['payload'=>$e]);
+
+    //     }
+    // }
+
+    // foreach($projects)
 
 
 
-    return response(['payload'=>$project->id]);
+    return response(['payload'=>Request()->post()]);
 
 });
