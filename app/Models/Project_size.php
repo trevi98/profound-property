@@ -14,19 +14,19 @@ class Project_size extends Model
         return $this->belongsTo(Project::class);
     }
 
-    public function size(){
-        return $this->belongsTo(Size::class);
-    }
+    // public function size(){
+    //     return $this->belongsTo(Size::class);
+    // }
 
     public function type(){
         return $this->belongsTo(Type::class);
     }
 
-    public function project_plan(){
-        return $this->hasOne(Project_plan::class);
-    }
+    // public function project_plan(){
+    //     return $this->hasOne(Project_plan::class);
+    // }
 
-    public function project_3d(){
-        return $this->hasOne(Project_3d::class);
-    }
+    // public function project_3d(){
+    //     return $this->hasOne(Project_3d::class);
+    // }
 }

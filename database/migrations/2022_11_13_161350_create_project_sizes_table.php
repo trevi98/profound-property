@@ -17,6 +17,8 @@ class CreateProjectSizesTable extends Migration
             $table->id();
             $table->foreignId('project_id')->constrained()->onDelete('cascade');
             $table->integer('bedrooms')->default(0);
+            $table->text('plans')->nullable();
+            $table->text('plans3d')->nullable();
             $table->foreignId('type_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
