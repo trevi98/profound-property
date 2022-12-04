@@ -14,8 +14,11 @@ use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Select;
-use App\Models\Role;
+use Laravel\Nova\Fields\Hidden;
+use Auth;
+use App\Models\User;
 use Waynestate\Nova\CKEditor4Field\CKEditor;
 
 class Property extends Resource
@@ -55,30 +58,33 @@ class Property extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Textarea::make('Title'),
+            Text::make('Title'),
             
-            Textarea::make('Property name','property_name'),
+            Text::make('Category'),
 
-            CkEditor::make('Description'),
+            Text::make('Property name','property_name'),
+
+            Textarea::make('Description'),
 
             Textarea::make('Location link','location_link'),
             
             Textarea::make('Permit Number','permit_number'),
             
-            Textarea::make('Category'),
 
-            Number::make('Price'),
+            Text::make('Price')->rules('required' , 'min:0' ,'numeric'),
+            
+            Text::make('Area')->rules('required','numeric','min:0'),
             
             Number::make('Number of bathrooms', 'bathrooms'),
             
             Number::make('Number of bedrooms', 'bedrooms'),
             
-            Number::make('Area'),
-            
             /////////Belongs To////////////
             
-            BelongsTo::make('Agent', 'user','\App\Nova\User'),
-          
+            Hidden::make('User', 'user_id')->default(function ($request) {
+                return Auth::id();
+            }),
+            
             BelongsTo::make('Location'),
          
             BelongsTo::make('Type'),
@@ -93,11 +99,16 @@ class Property extends Resource
            
             hasMany::make('Viewings','viewings'),
             
-            Image::make('Cover Image')->hideFromIndex()
-            ->disk('public')->path('images'),
+            BelongsToMany::make('Amenity', 'amenities','\App\Nova\Amenity'),
+
+            BelongsToMany::make('Community Amenities', 'Community_amenities','\App\Nova\communityAmenity'),
+            // BelongsToMany::make('Community_amenities'),
+            
+            Image::make('Cover Image','cover')->hideFromIndex()
+            ->disk('userimages'),
 
             File::make('Video')->nullable()->hideFromIndex()
-            ->disk('public')->path('images'),
+            ->disk('userimages'),
             
             Boolean::make('Featured'),
 
@@ -117,10 +128,11 @@ class Property extends Resource
     {
         return [];
     }
-    public static function relatableUsers(NovaRequest $request, $query)
-    {
-        return $query->where('role_id', Role::where('title','agent')->first()->id);
-    }
+    // public static function relatableUsers(NovaRequest $request, $query)
+    // {
+    //     // return $query->where('role_id', Role::where('title','agent')->first()->id);
+    //     return $query->find(Auth::id());
+    // }
     /**
      * Get the filters available for the resource.
      *

@@ -53,19 +53,13 @@ class Post extends Resource
         
             Text::make('title'),
 
-            Trix::make('description')->withFiles('public'),
-            // CkEditor::make('Description','description') ,
-            // NovaTinyMCE :: make ('description') ,
+            Trix::make('Description')->withFiles('userimages'),
 
             Image::make('Cover Image','cover')->hideFromIndex()
-            ->disk('public')
-            ->path('photos')
-            ->prunable(),
+            ->disk('userimages'),
         
             File::make('Video')->nullable()->hideFromIndex()
-            ->disk('public')
-            ->path('photos')
-            ->prunable(),
+            ->disk('userimages'),
                 
         ];
     }
