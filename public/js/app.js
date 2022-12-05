@@ -27089,7 +27089,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           path = this.path;
           payload = {
             project: this.project,
-            project_id: this.route.params.id
+            project_id: this.$route.params.id
           };
         }
         _axios__WEBPACK_IMPORTED_MODULE_1__.apiBack.post(path, payload).then(function (res) {
