@@ -344,7 +344,7 @@ Route::post('update_project',function(){
     try{
         $payment_plans = Payment_plans::where('project_id', $project_id)->get();
         foreach($payment_plans as $i =>$payment_plan){
-            $payment_plan::update( ['title'=>$payment['title'],'pricentage'=>$payment['precentages'],'project_id'=>$project->id]);
+            $payment_plan::update( ['title'=>Request()->post('paymenPlans')[i]['title'],'pricentage'=>Request()->post('paymenPlans')[i]['precentages'],'project_id'=>$project_id]);
         }
 
     }catch(Exception $e){
