@@ -5,6 +5,7 @@ import MainView from '../views/dashboard/MainView.vue'
 import AddProjectView from '../views/dashboard/AddProjectView.vue'
 import AddPropertyView from '../views/dashboard/AddPropertyView.vue'
 import ListProjectsView from '../views/dashboard/ListProjectsView.vue'
+import EditProjectView from '../views/dashboard/EditProjectView.vue'
 import Test from '../views/dashboard/Test.vue'
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path:'/add-projects',
     name:'AddProperties',
     component:AddPropertyView
+  },
+  {
+    path:'/add-projects/:id',
+    name:'EditProject',
+    component:EditProjectView
   },
 
 

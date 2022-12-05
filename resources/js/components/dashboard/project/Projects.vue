@@ -14,9 +14,9 @@
                     <td>{{ project[0] }}</td>
                     <td>{{ project[1] }}</td>
                     <td>
-                        <div class="text-[#a00] cursor-pointer" @click="deleteProject($event,project[2])">
-                            Delete
-                        </div>
+                        <router-link class="text-[#a00] cursor-pointer" :to="{name:'EditProject',params:{id:project[2]}}">
+                            Edit
+                        </router-link>
                     </td>
                 </tr>
 
