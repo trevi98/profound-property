@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/dashboard/LoginView.vue'
 import MainView from '../views/dashboard/MainView.vue'
 import AddProjectView from '../views/dashboard/AddProjectView.vue'
+import AddPropertyView from '../views/dashboard/AddPropertyView.vue'
 import ListProjectsView from '../views/dashboard/ListProjectsView.vue'
 import Test from '../views/dashboard/Test.vue'
 
@@ -31,6 +32,11 @@ const routes = [
     path:'/list-projects',
     name:'ListProjects',
     component:ListProjectsView
+  },
+  {
+    path:'/add-projects',
+    name:'AddProperties',
+    component:AddPropertyView
   },
 
 

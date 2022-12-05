@@ -10,11 +10,11 @@
                 </tr>
             </thead>
             <tbody v-if="projects">
-                <tr v-for="project in projects" :key="project.id">
-                    <td>{{ project.title }}</td>
-                    <td>{{ project.developer }}</td>
+                <tr v-for="project in projects" :key="project[2]">
+                    <td>{{ project[0] }}</td>
+                    <td>{{ project[1] }}</td>
                     <td>
-                        <div class="text-[#a00] cursor-pointer" @click="deleteProject($event,project.id)">
+                        <div class="text-[#a00] cursor-pointer" @click="deleteProject($event,project[2])">
                             Delete
                         </div>
                     </td>
@@ -33,7 +33,7 @@
 export default {
     data(){
         return {
-            projects: null,
+            projects: [],
         }
     },
     methods:{
@@ -42,14 +42,13 @@ export default {
             .then((response) => {
                 $event.target.parentElement.parentElement.remove();
                 console.log(response.data);
+                let projects = [];
                 this.projects.filter((project)=>{
-                    if(project.id != id){
+                    if(project[2] != id){
                         return true;
                     }
                     return false;
                 })
-                var myTable = $('#table_id').DataTable();
-                myTable.clear().rows.add(this.projects).draw();
                 // $('#table_id').datatable().api().ajax.reload();
                 // $('#table_id').DataTable().draw();
 
@@ -62,7 +61,9 @@ export default {
     mounted(){
         apiBack.get('/projects')
             .then((response) => {
-                this.projects = response.data.payload;
+                 response.data.payload.forEach(elmnt => {
+                    this.projects.push([elmnt.title,elmnt.developer,elmnt.id]);
+                 });
                 $(document).ready( function () {
                     $('#table_id').DataTable();
                 } );

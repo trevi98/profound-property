@@ -5,7 +5,7 @@
         <router-link class="w-[calc(50%-10px)] aspect-square flex justify-center items-center bg-[#fff]" :to="{name:'ListProjects'}"><span>Manage projects</span></router-link>
         <router-link class="w-[calc(50%-10px)] aspect-square flex justify-center items-center bg-[#fff]" :to="{name:'addProject'}"><span>Add project</span></router-link>
         <router-link class="w-[calc(50%-10px)] aspect-square flex justify-center items-center bg-[#fff]" :to="{name:'home'}"><span>Manage properties</span></router-link>
-        <router-link class="w-[calc(50%-10px)] aspect-square flex justify-center items-center bg-[#fff]" :to="{name:'home'}"><span>Add property</span></router-link>
+        <router-link class="w-[calc(50%-10px)] aspect-square flex justify-center items-center bg-[#fff]" :to="{name:'AddProperties'}"><span>Add property</span></router-link>
     </div>
   </div>
 </template>

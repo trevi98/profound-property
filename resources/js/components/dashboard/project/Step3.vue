@@ -2,22 +2,25 @@
     <div class="w-[80%] mx-auto bg-[#fff] rounded-md py-[20px] mt-[40px]">
         <div class="flex flex-col justify-center items-center gap-[80px] py-[20px]">
 
-            <div v-if="project.availableUnites">
-                <div v-for="unit in project.availableUnites" :key="unit">
-                    <div>
+            <div v-if="project.availableUnites" >
+                <div v-for="unit in project.availableUnites" :key="unit" class="flex flex-col gap-[10px]">
+                    <div class="text-center text-lg">
 
                         {{ types[unit] }}
                     </div>
-                    <div class="flex flex-col justify-center items-start gap-[15px] w-full">
-                        <label for="bedrooms" class="w-[80%] mx-auto">Bedrooms: </label>
-                        <select v-model="formData.bedrooms[unit]" name="developers" id=""  class="p-[10px] border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto">
+                    <div class="flex justify-around items-center w-full">
+                        <label for="bedrooms" class=" mx-auto">Bedrooms: </label>
+                        <select v-model="formData.bedrooms[unit]" name="developers" id=""  class="p-[10px] border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid mx-auto">
                             <option value="0" >Studio </option>
 
                             <option v-for="bedroom in bedrooms" :key="bedroom.val" :value="bedroom.val">{{ bedroom.title }}</option>
                         </select>
                     </div>
-                    <UploadeFile @uploaded="uploadedPlans($event,unit)" label="Floor plans" name="file" path="/upload_file" :allowed="allowedFiles" :added="project.plansArray.includes(unit) ? true : false"/>
-                    <UploadeFile @uploaded="uploaded3d($event,unit)" label="3D file" name="file" path="/upload_file" :allowed="allowedFiles" :added="project.plans3dArray.includes(unit) ? true : false"/>
+                    <div class="my-[10px] flex gap-[10px]">
+                        <UploadeFile @uploaded="uploadedPlans($event,unit)" label="Floor plans" name="file" path="/upload_file" :allowed="allowedFiles" :added="project.plansArray.includes(unit) ? true : false"/>
+                        <UploadeFile @uploaded="uploaded3d($event,unit)" label="3D file" name="file" path="/upload_file" :allowed="allowedFiles" :added="project.plans3dArray.includes(unit) ? true : false"/>
+
+                    </div>
                     <hr class="my-[10px]">
 
                 </div>

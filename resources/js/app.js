@@ -54,6 +54,32 @@ let store = createStore({
             plans3dArray:[], //to ensure that files in step3 can retain the state
             installments:null // number for paymen fields
         },
+
+        property:{
+            title: null,
+            price: null,
+            description: null,
+            cover: null,
+            location_link: null,
+            video: null,
+            bathrooms: null,
+            bedrooms: null,
+            permit_number: null,
+            property_name: null,
+            featured: null,
+            sold: null,
+            area: null,
+            category: null,
+            user_id: null,
+            location_id: null,
+            type_id: null,
+            images:[],
+            amenities:[],
+            communityAmenities:[],
+            floorPlans:[],
+            floor3Ds:[]
+        },
+
         Nav:{
             title:'',
             current:'',
@@ -122,6 +148,35 @@ let store = createStore({
             //  .log(payload)
             state.project.paymenPlans = payload.paymenPlans;
 
+        },
+        setStep1Property(state,payload){
+            state.property.title = payload.title
+            state.property.price = payload.price
+            state.property.description = payload.description
+            state.property.cover = payload.cover
+            state.property.location_link = payload.location_link
+            state.property.video = payload.video
+            state.property.bathrooms = payload.bathrooms
+            state.property.bedrooms = payload.bedrooms
+            state.property.permit_number = payload.permit_number
+            state.property.property_name = payload.property_name
+            state.property.featured = payload.featured
+            state.property.sold = false
+            state.property.area = payload.area
+            state.property.category = payload.category
+            state.property.user_id = payload.user_id
+            state.property.type_id = payload.type_id
+            state.property.amenities = payload.amenities
+            state.property.communityAmenities = payload.communityAmenities
+        },
+        setStep2Property(state,payload){
+            //  .log(payload)
+            state.property.location_id = payload.location_id;
+        },
+        setStep3Property(state,payload){
+            //  .log(payload)
+            state.property.images = payload.images;
+            state.property.images = payload.images;
         },
         setNav(state,payload){
             state.Nav.title = payload.title;

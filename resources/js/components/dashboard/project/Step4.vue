@@ -1,17 +1,24 @@
 <template>
   <div class="w-[80%] mx-auto bg-[#fff] rounded-md py-[20px] mt-[40px]">
-    <UploadeFile @uploaded="uploaded($event,'cover')" label="Cover" name="file" path="/upload_file" :allowed="allowedImages" :added="project.cover != null ? true : false"/>
+    <div class="flex justify-center items-center">
+        <UploadeFile @uploaded="uploaded($event,'cover')" label="Cover" name="file" path="/upload_file" :allowed="allowedImages" :added="project.cover != null ? true : false"/>
+        <UploadMultipleFiles  @uploaded="uploaded($event,'images')" label="Additional images" name="files" path="/upload_multiple_file" :allowed="allowedImages" :added="project.images.length > 0 ? true : false"/>
+
+        </div>
+        <hr>
+    <div class="flex justify-center items-center">
+        <UploadeFile @uploaded="uploaded($event,'front')" label="Front view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.front != null ? true : false"/>
+
+        <UploadeFile @uploaded="uploaded($event,'back')" label="Back view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.back != null ? true : false"/>
+    </div>
     <hr>
-    <UploadeFile @uploaded="uploaded($event,'front')" label="Front view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.front != null ? true : false"/>
-    <hr>
-    <UploadeFile @uploaded="uploaded($event,'back')" label="Back view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.back != null ? true : false"/>
-    <hr>
-    <UploadeFile @uploaded="uploaded($event,'right')" label="Right view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.right != null ? true : false"/>
-    <hr>
-    <UploadeFile @uploaded="uploaded($event,'left')" label="Left view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.left != null ? true : false"/>
+    <div class="flex justify-center items-center">
+        <UploadeFile @uploaded="uploaded($event,'left')" label="Left view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.left != null ? true : false"/>
+        <UploadeFile @uploaded="uploaded($event,'right')" label="Right view" name="file" path="/upload_file" :allowed="allowedImages" :added="project.right != null ? true : false"/>
+
+    </div>
     <hr class="my-[20px]"/>
-    <UploadMultipleFiles  @uploaded="uploaded($event,'images')" label="Additional images" name="files" path="/upload_multiple_file" :allowed="allowedImages" :added="project.images.length > 0 ? true : false"/>
-    <div class="flex flex-col">
+    <div class="flex justify-center items-center w-[80%] mx-auto my-[10px]">
         <label for="video">Video link:</label>
         <input type="text" name="video" v-model="formData.video" class="border-[1px] border-[#a09999d8] h-[40px] bg-[#fff] border-solid w-[80%] mx-auto p-[10px]">
     </div>
