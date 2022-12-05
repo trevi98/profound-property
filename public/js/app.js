@@ -27083,11 +27083,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (val == 'next') {
         // alert('d')
         //////////
+        var payload = this.project;
         var path = "/create_project";
         if (this.path != null) {
           path = this.path;
+          payload = {
+            project: this.project,
+            project_id: $this.route.params.id
+          };
         }
-        _axios__WEBPACK_IMPORTED_MODULE_1__.apiBack.post(path, this.project).then(function (res) {
+        _axios__WEBPACK_IMPORTED_MODULE_1__.apiBack.post(path, payload).then(function (res) {
           console.log(res.data);
         })["catch"](function (err) {
           // alert(res)
@@ -29877,12 +29882,9 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
       featured: false,
       status_id: null,
       plansArray: [],
-      //to ensure that files in step3 can retain the state
       plans3dArray: [],
-      //to ensure that files in step3 can retain the state
-      installments: null // number for paymen fields
+      installments: null
     },
-
     property: {
       title: null,
       price: null,
