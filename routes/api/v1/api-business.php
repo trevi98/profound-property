@@ -308,7 +308,7 @@ Route::get('/get-project-recored' , function(){
 Route::post('update_project',function(){
 
     try{
-        $project_id = Request()->get('id');
+        $project_id = request()->post();
         return $project_id;
         $project = Project::findOrFail($project_id);
 
