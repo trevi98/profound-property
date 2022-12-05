@@ -7,10 +7,13 @@ use App\Models\Location;
 use App\Models\Payment_plan;
 use App\Models\Project;
 use App\Models\Project_img;
+use App\Models\Amenity_project;
+use App\Models\ComunityAmenity_project;
 use App\Models\Project_status;
 use App\Models\Size;
 use App\Models\Type;
 use App\Models\User;
+use App\Models\Project_size;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -160,7 +163,7 @@ Route::post('/create_project',function(){
     }
 
     try{
-
+        //check
         foreach(Request()->post('paymenPlans') as $payment){
             Payment_plan::create( ['title'=>$payment['title'],'pricentage'=>$payment['precentages'],'project_id'=>$project->id]);
         }
@@ -171,9 +174,7 @@ Route::post('/create_project',function(){
     }
 
     if(count(Request()->post('images')) > 0){
-
         try{
-
             foreach(Request()->post('images') as $image){
                 Project_img::create( ['img'=>$image,'project_id'=>$project->id]);
             }
@@ -184,38 +185,103 @@ Route::post('/create_project',function(){
         }
     }
 
-    // if(count(Request()->post('amenities')) > 0){
+    //Todo type size 
+    
 
-    //     try{
+    if(Request()->post('right') != null){
+        try{
+            $project->update([
+                'right' => Request()->post('right') ,
+            ]);
 
-    //         foreach(Request()->post('amenities') as $amenity){
-    //             Project_img::create( ['title'=>$amenity,'project_id'=>$project->id]);
-    //         }
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
+        }
+    }
+    if(Request()->post('left') != null){
+        try{
+            $project->update([
+                'left' => Request()->post('left') ,
+            ]);
 
-    //     }catch(Exception $e){
-    //         return response(['payload'=>$e]);
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
+        }
+    }
+    if(Request()->post('front') != null){
+        try{
+            $project->update([
+                'front' => Request()->post('front') ,
+            ]);
 
-    //     }
-    // }
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
+        }
+    }
+    if(Request()->post('back') != null){
+        try{
+            $project->update([
+                'back' => Request()->post('back') ,
+            ]);
 
-    // if(Request()->post('right') != null){
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
+        }
+    }
 
-    //     try{
+    if(count(Request()->post('amenities')) > 0){
+        
+    
+        try{
+            foreach(Request()->post('amenities') as $amenity){
+                Amenity_project::create([
+                    'project_id' => $project->id,
+                    'amenity_id' => $amenity,
+                ]);
+            }      
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
 
-    //         foreach(Request()->post('images') as $image){
-    //             Project_img::create( ['img'=>$image,'project_id'=>$project->id]);
-    //         }
+        }
+    }
 
-    //     }catch(Exception $e){
-    //         return response(['payload'=>$e]);
+    if(count(Request()->post('comunityAmenities')) > 0){
+        
 
-    //     }
-    // }
+        try{
+            foreach(Request()->post('comunityAmenities') as $amenity){
+                ComunityAmenity_project::create([
+                    'project_id' => $project->id,
+                    'community_amenity_id' => $amenity,
+                ]);
+            }   
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
 
-    // foreach($projects)
+        }
+    }
 
+    $floor3ds = Request()->post('floor3ds');
+    $floorPlans = Request()->post('floorPlans');
+    $bedrooms = Request()->post('bedrooms');
 
+    foreach(Request()->post('availableUnites') as $unitNumber){
+        Project_size::create([
+            'project_id' => $project->id,
+            'plans' => array_key_exists($unitNumber,$floorPlans) ? $floorPlans[$unitNumber] : null,
+            'plans3d' => array_key_exists($unitNumber,$floor3ds) ? $floor3ds[$unitNumber] : null,
+            'bedrooms' => $bedrooms[$unitNumber],
+            'type_id' => $unitNumber,
+        ]);
+    }
+    if(count(Request()->post('availableUnites')) > 0){
+        try{
+          
+        }catch(Exception $e){
+            return response(['payload'=>$e]);
 
+        }
+    }
     return response(['payload'=>Request()->post()]);
 
 });
@@ -224,5 +290,5 @@ Route::post('/create_project',function(){
 
 Route::post('/delete_projects',function(){
     Project::where('id',Request()->post('id'))->delete();
-    return response(['payload'=>'done']);
+    return response(['success'=> 1 , 'payload'=>'done']);
 });

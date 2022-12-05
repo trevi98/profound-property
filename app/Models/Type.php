@@ -16,6 +16,6 @@ class Type extends Model
     }
 
     public function project_size(){
-        return $this->hasMany(Size::class);
+        return $this->hasOne(Size::class);
     }
 }
