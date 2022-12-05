@@ -308,7 +308,8 @@ Route::get('/get-project-recored' , function(){
 Route::post('update_project',function(){
 
     try{
-        $project_id = Request()->get('project_id');
+        $project_id = Request()->get('id');
+        return $project_id;
         $project = Project::findOrFail($project_id);
 
         $project->update([
@@ -337,10 +338,10 @@ Route::post('update_project',function(){
             "type_id" => Request()->post('type_id')
         ]);
     }catch(Exception $e){
-        return response(['payload'=>$e]);
+        return response(['payload'=>$e->getMessage()]);
 
     }
-
+    return 'qweqweqwqweqwe';
     try{
         $payment_plans = Payment_plans::where('project_id', $project_id)->get();
         foreach($payment_plans as $i =>$payment_plan){
