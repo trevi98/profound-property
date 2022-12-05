@@ -27206,7 +27206,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         sold: null,
         area: null,
         category: null,
-        user_id: null,
+        user_id: $cookies.get('id'),
         location_id: null,
         type_id: null,
         images: [],
@@ -27479,11 +27479,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     nav: function nav(val) {
       this.addToState();
       if (val == 'next') {
+        // alert('d')
+        //////////
+
+        _axios__WEBPACK_IMPORTED_MODULE_1__.apiFront.post('/create_property', this.property).then(function (res) {
+          console.log(res.data);
+        })["catch"](function (err) {
+          // alert(res)
+          console.log(err);
+        });
+
+        //////////
+
         this.setNav({
-          title: 'Step 5 | Add payment planes |',
-          current: 'step5',
-          prev: 'step4',
-          next: null
+          title: 'Add property - step 1 | basic info |',
+          current: 'step1',
+          prev: null,
+          next: 'step2'
         });
       } else {
         // this.addToState();
@@ -29368,7 +29380,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     allowed: $data.allowedFiles,
     added: _ctx.property.floor3Ds != null ? true : false
   }, null, 8 /* PROPS */, ["allowed", "added"])]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormNavigator, {
-    onNav: $options.nav
+    onNav: $options.nav,
+    submit: true
   }, null, 8 /* PROPS */, ["onNav"])]);
 }
 
@@ -29746,8 +29759,8 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
       images: [],
       amenities: [],
       communityAmenities: [],
-      floorPlans: [],
-      floor3Ds: []
+      floorPlans: null,
+      floor3Ds: null
     },
     Nav: {
       title: '',
@@ -29819,7 +29832,6 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
       state.property.title = payload.title;
       state.property.price = payload.price;
       state.property.description = payload.description;
-      state.property.cover = payload.cover;
       state.property.location_link = payload.location_link;
       state.property.video = payload.video;
       state.property.bathrooms = payload.bathrooms;

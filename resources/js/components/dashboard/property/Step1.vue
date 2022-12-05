@@ -137,7 +137,7 @@
                     sold: null,
                     area: null,
                     category: null,
-                    user_id: null,
+                    user_id:$cookies.get('id'),
                     location_id: null,
                     type_id: null,
                     images:[],

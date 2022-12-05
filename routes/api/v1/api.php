@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Project;
+use App\Models\Property;
 use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -56,4 +57,29 @@ Route::get('/projects/featured',function(){
         'status' => 'success',
         'payload' => $projects
     ]);
+});
+
+Route::post('/create_property',function(){
+    $property = null;
+    try{
+
+        $property = Property::create([
+            "title" => Request()->post('title'),
+            "price" => Request()->post('price'),
+            "description" => Request()->post('description'),
+            "cover" => Request()->post('cover'),
+            "video" => Request()->post('video'),
+            "area" => Request()->post('area'),
+            "featured" => Request()->post('featured'),
+            "location_link" => Request()->post('location_link'),
+            "user_id" => Request()->post('user_id'),
+            "location_id" => Request()->post('location_id'),
+            "type_id" => Request()->post('type_id')
+        ]);
+    }catch(Exception $e){
+        return response(['payload'=>$e]);
+
+    }
+
+    return response(['payload'=>Request()->post()]);
 });

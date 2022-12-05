@@ -76,8 +76,8 @@ let store = createStore({
             images:[],
             amenities:[],
             communityAmenities:[],
-            floorPlans:[],
-            floor3Ds:[]
+            floorPlans:null,
+            floor3Ds:null
         },
 
         Nav:{
@@ -153,7 +153,6 @@ let store = createStore({
             state.property.title = payload.title
             state.property.price = payload.price
             state.property.description = payload.description
-            state.property.cover = payload.cover
             state.property.location_link = payload.location_link
             state.property.video = payload.video
             state.property.bathrooms = payload.bathrooms

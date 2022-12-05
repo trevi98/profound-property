@@ -12,14 +12,14 @@
           <UploadeFile @uploaded="uploaded($event,'floor3Ds')" label="3D file" name="file" path="/upload_file" :allowed="allowedFiles" :added="property.floor3Ds != null ? true : false"/>
       </div>
       <hr class="my-[20px]">
-      <FormNavigator @nav="nav"/>
+      <FormNavigator @nav="nav" :submit="true" />
     </div>
   </template>
 
   <script>
   import FormNavigator from '../FormNavigator.vue';
   import { mapMutations,mapState } from 'vuex';
-  import { apiBack } from '../../../axios';
+  import { apiFront } from '../../../axios';
   import UploadeFile from '../UploadeFile.vue';
   import UploadMultipleFiles from '../UploadMultipleFiles.vue';
   export default {
@@ -74,13 +74,29 @@
           nav(val){
               this.addToState();
               if(val == 'next'){
-                  this.setNav({
-                      title: 'Step 5 | Add payment planes |',
-                      current: 'step5',
-                      prev: 'step4',
-                      next: null
-                   })
-              }
+                // alert('d')
+                //////////
+
+                apiFront.post( '/create_property',
+                    this.property,
+                    ).then((res)=>{
+                        console.log(res.data)
+                    })
+                    .catch((err)=>{
+                        // alert(res)
+                    console.log(err);
+                });
+
+                //////////
+
+                this.setNav({
+                    title: 'Add property - step 1 | basic info |',
+                    current: 'step1',
+                    prev: null,
+                    next: 'step2'
+                 })
+
+            }
               else{
                   // this.addToState();
                   this.setNav({
