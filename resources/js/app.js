@@ -176,7 +176,9 @@ let store = createStore({
         setStep3Property(state,payload){
             //  .log(payload)
             state.property.images = payload.images;
-            state.property.images = payload.images;
+            state.property.cover = payload.cover;
+            state.property.floorPlans = payload.floorPlans;
+            state.property.floor3Ds = payload.floor3Ds;
         },
         setNav(state,payload){
             state.Nav.title = payload.title;
