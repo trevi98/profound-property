@@ -307,9 +307,9 @@ Route::get('/get-project-recored' , function(){
 
 Route::post('update_project',function(){
 
-    try{
-        $project_id = request()->post();
-        return $project_id;
+    // try{
+        return request()->post();
+        $project_id = request()->post('project_id');
         $project = Project::findOrFail($project_id);
 
         $project->update([
@@ -337,10 +337,10 @@ Route::post('update_project',function(){
             "location_id" => Request()->post('location_id'),
             "type_id" => Request()->post('type_id')
         ]);
-    }catch(Exception $e){
-        return response(['payload'=>$e->getMessage()]);
+    // }catch(Exception $e){
+    //     return response(['payload'=>$e->getMessage()]);
 
-    }
+    // }
     return 'qweqweqwqweqwe';
     try{
         $payment_plans = Payment_plans::where('project_id', $project_id)->get();
