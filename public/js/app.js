@@ -27047,7 +27047,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     };
   },
-  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapMutations)(['setNav', 'setStep5'])), {}, {
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapMutations)(['setNav', 'setStep5', 'resetProjectState'])), {}, {
     addToState: function addToState() {
       // console.log('d')
       var payments = [];
@@ -27080,10 +27080,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     nav: function nav(val) {
       this.addToState();
+      var payload = this.project;
       if (val == 'next') {
         // alert('d')
         //////////
-        var payload = this.project;
         var path = "/create_project";
         if (this.path != null) {
           path = this.path;
@@ -27099,6 +27099,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         //////////
 
+        // this.resetProjectState();
         this.setNav({
           title: 'Add project - step 1 | basic info |',
           current: 'step1',
@@ -29627,8 +29628,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 3
   })) : _ctx.$store.state.Nav.current == 'step5' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Step5, {
     key: 4,
-    installments: _ctx.project.installments,
-    path: "update_project"
+    installments: _ctx.project.installments
   }, null, 8 /* PROPS */, ["installments"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <FormNavigator/> ")]);
 }
 
@@ -29925,6 +29925,7 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
     },
     resetProjectState: function resetProjectState(state) {
       var payload = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      state.project.title = null, state.project.price = null, state.project.description = null, state.project.cover = null, state.project.left = null, state.project.right = null, state.project.front = null, state.project.back = null, state.project.dld = null, state.project.video = null, state.project.bathrooms = null, state.project.bedrooms = {}, state.project.completion_date = null, state.project.starting_date = null, state.project.area = null, state.project.stores = null, state.project.appartments_in_store = null, state.project.number_of_unites_available = null, state.project.user_id = null, state.project.developer_id = null, state.project.location_id = null, state.project.type_id = null, state.project.locationLink = null, state.project.availableUnites = [], state.project.amenities = [], state.project.comunityAmenities = [], state.project.floorPlans = {}, state.project.floor3ds = {}, state.project.images = [], state.project.paymenPlans = [], state.project.featured = null, state.project.status_id = null, state.project.plansArray = [], state.project.plans3dArray = [], state.project.installments = null;
     },
     setProjectState: function setProjectState(state, payload) {
       console.log("sssss", payload);

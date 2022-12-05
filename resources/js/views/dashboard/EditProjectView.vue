@@ -6,7 +6,7 @@
         <Step2 v-else-if="$store.state.Nav.current == 'step2'" :areasProp="areas"/>
         <Step3 v-else-if="$store.state.Nav.current == 'step3'"/>
         <Step4 v-else-if="$store.state.Nav.current == 'step4'"/>
-        <Step5 v-else-if="$store.state.Nav.current == 'step5'" :installments="project.installments" path="update_project"/>
+        <Step5 v-else-if="$store.state.Nav.current == 'step5'" :installments="project.installments" />
 
         <!-- <FormNavigator/> -->
     </div>

@@ -38,7 +38,7 @@ export default {
         }
     },
     methods:{
-        ...mapMutations(['setNav','setStep5']),
+        ...mapMutations(['setNav','setStep5','resetProjectState']),
 
 
         addToState(){
@@ -74,10 +74,10 @@ export default {
 
         nav(val){
             this.addToState();
+            let payload  = this.project;
             if(val == 'next'){
                 // alert('d')
                 //////////
-                let payload  = this.project;
                 let path = "/create_project";
                 if(this.path != null ){
                     path  = this.path
@@ -85,17 +85,18 @@ export default {
                     payload['project_id'] = this.$route.params.id
                 }
                 apiBack.post( path,
-                    payload,
-                    ).then((res)=>{
-                        console.log(res.data)
-                    })
-                    .catch((err)=>{
-                        // alert(res)
+                payload,
+                ).then((res)=>{
+                    console.log(res.data)
+                })
+                .catch((err)=>{
+                    // alert(res)
                     console.log(err);
                 });
 
                 //////////
 
+                // this.resetProjectState();
                 this.setNav({
                     title: 'Add project - step 1 | basic info |',
                     current: 'step1',
