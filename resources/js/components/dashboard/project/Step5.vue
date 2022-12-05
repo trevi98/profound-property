@@ -81,7 +81,7 @@ export default {
                 let path = "/create_project";
                 if(this.path != null ){
                     path  = this.path
-                    payload = {project:this.project,project_id:$this.route.params.id}
+                    payload = {project:this.project,project_id:this.route.params.id}
                 }
                 apiBack.post( path,
                     payload,
