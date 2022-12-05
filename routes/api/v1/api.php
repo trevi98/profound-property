@@ -4,6 +4,10 @@ use App\Models\Project;
 use App\Models\Property;
 use App\Models\Type;
 use App\Models\User;
+use App\Models\ComunityAmenity_property;
+use App\Models\Amenity_property;
+use App\Models\Property_3d;
+use App\Models\Property_plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -81,5 +85,60 @@ Route::post('/create_property',function(){
 
     }
 
+
+    if(count(Request()->post('amenities')) > 0){
+
+
+        try{
+            foreach(Request()->post('amenities') as $amenity){
+                Amenity_property::create([
+                    'property_id' => $property->id,
+                    'amenity_id' => $amenity,
+                ]);
+            }
+        }catch(Exception $e){
+            return response(['payload'=>$e->getMessage()]);
+
+        }
+    }
+    if(count(Request()->post('communityAmenities')) > 0){
+
+
+        try{
+            foreach(Request()->post('communityAmenities') as $amenity){
+                ComunityAmenity_property::create([
+                    'property_id' => $property->id,
+                    'community_amenity_id' => $amenity,
+                ]);
+            }
+        }catch(Exception $e){
+            return response(['payload'=>$e->getMessage()]);
+
+        }
+
+    }
+        try{
+            if(!is_null(Request()->post('floor3Ds'))){
+                Property_3d::create([
+                    'property_id' => $property->id,
+                    'file' => Request()->post('floor3Ds'),
+                ]);
+            }
+        }catch(Exception $e){
+            return response(['payload'=>$e->getMessage()]);
+        }
+      
+        try{
+            if(!is_null(Request()->post('floorPlans'))){
+                Property_plan::create([
+                    'property_id' => $property->id,
+                    'file' => Request()->post('floor3Ds'),
+                    'pdf' => false,
+                ]);
+            }
+        }catch(Exception $e){
+            return response(['payload'=>$e->getMessage()]);
+        }
+        
     return response(['payload'=>Request()->post()]);
 });
