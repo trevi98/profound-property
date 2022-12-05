@@ -97,6 +97,9 @@ let store = createStore({
             state.types = payload.types;
 
         },
+        resetProjectState(state,payload = null){
+
+        },
         setProjectState(state,payload){
             console.log("sssss",payload)
             state.project.title = payload.title

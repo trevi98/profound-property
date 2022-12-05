@@ -27087,10 +27087,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var path = "/create_project";
         if (this.path != null) {
           path = this.path;
-          payload = {
-            project: this.project,
-            project_id: this.$route.params.id
-          };
+          payload = this.project;
+          payload['project_id'] = this.$route.params.id;
         }
         _axios__WEBPACK_IMPORTED_MODULE_1__.apiBack.post(path, payload).then(function (res) {
           console.log(res.data);
@@ -29924,6 +29922,9 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
     },
     setTypes: function setTypes(state, payload) {
       state.types = payload.types;
+    },
+    resetProjectState: function resetProjectState(state) {
+      var payload = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
     },
     setProjectState: function setProjectState(state, payload) {
       console.log("sssss", payload);
