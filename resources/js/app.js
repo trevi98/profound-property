@@ -50,9 +50,9 @@ let store = createStore({
             paymenPlans:[],
             featured:false,
             status_id: null,
-            plansArray:[], //to ensure that files in step3 can retain the state
-            plans3dArray:[], //to ensure that files in step3 can retain the state
-            installments:null // number for paymen fields
+            plansArray:[],
+            plans3dArray:[],
+            installments:null
         },
 
         property:{
