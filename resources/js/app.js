@@ -76,8 +76,8 @@ let store = createStore({
             images:[],
             amenities:[],
             communityAmenities:[],
-            floorPlans:[],
-            floor3Ds:[]
+            floorPlans:null,
+            floor3Ds:null
         },
 
         Nav:{
@@ -96,6 +96,44 @@ let store = createStore({
         setTypes(state,payload){
             state.types = payload.types;
 
+        },
+        setProjectState(state,payload){
+            console.log("sssss",payload)
+            state.project.title = payload.title
+            state.project.price = payload.price
+            state.project.description = payload.description
+            state.project.cover = payload.cover
+            state.project.left = payload.left
+            state.project.right = payload.right
+            state.project.front = payload.front
+            state.project.back = payload.back
+            state.project.dld = payload.dld
+            state.project.video = payload.video
+            state.project.bathrooms = payload.bathrooms
+            state.project.bedrooms = payload.bedrooms
+            state.project.completion_date = payload.completion_date
+            state.project.starting_date = payload.starting_date
+            state.project.area = payload.area
+            state.project.stores = payload.stores
+            state.project.appartments_in_store = payload.appartments_in_store
+            state.project.number_of_unites_available = payload.number_of_unites_available
+            state.project.user_id = payload.user_id
+            state.project.developer_id = payload.developer_id
+            state.project.location_id = payload.location_id
+            state.project.type_id = payload.type_id
+            state.project.locationLink = payload.locationLink
+            state.project.availableUnites = payload.availableUnites
+            state.project.amenities = payload.amenities
+            state.project.comunityAmenities = payload.comunityAmenities
+            state.project.floorPlans = payload.floorPlans
+            state.project.floor3ds = payload.floor3ds
+            state.project.images = payload.images
+            state.project.paymenPlans = payload.paymenPlans
+            state.project.featured = payload.featured
+            state.project.status_id = payload.status_id
+            state.project.plansArray = payload.plansArray
+            state.project.plans3dArray = payload.plans3dArray
+            state.project.installments = payload.installments
         },
         setStep1(state,payload){
             // console.log(payload)
@@ -153,7 +191,6 @@ let store = createStore({
             state.property.title = payload.title
             state.property.price = payload.price
             state.property.description = payload.description
-            state.property.cover = payload.cover
             state.property.location_link = payload.location_link
             state.property.video = payload.video
             state.property.bathrooms = payload.bathrooms

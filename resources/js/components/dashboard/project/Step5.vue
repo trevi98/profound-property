@@ -28,7 +28,7 @@ import { mapMutations,mapState } from 'vuex';
 import { apiBack } from '../../../axios';
 export default {
     components:{FormNavigator },
-    props:['installments'],
+    props:['installments','path'],
     data(){
         return {
             formData:{
@@ -77,8 +77,11 @@ export default {
             if(val == 'next'){
                 // alert('d')
                 //////////
-
-                apiBack.post( '/create_project',
+                let path = "/create_project";
+                if(this.path != null ){
+                    path  = this.path
+                }
+                apiBack.post( path,
                     this.project,
                     ).then((res)=>{
                         console.log(res.data)

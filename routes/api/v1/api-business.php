@@ -130,7 +130,7 @@ Route::post('/upload_multiple_file',function(){
 
 });
 Route::post('/create_project',function(){
-   
+
     $project = null;
     try{
 
@@ -187,8 +187,8 @@ Route::post('/create_project',function(){
         }
     }
 
-    //Todo type size 
-    
+    //Todo type size
+
 
     if(Request()->post('right') != null){
         try{
@@ -232,15 +232,15 @@ Route::post('/create_project',function(){
     }
 
     if(count(Request()->post('amenities')) > 0){
-        
-    
+
+
         try{
             foreach(Request()->post('amenities') as $amenity){
                 Amenity_project::create([
                     'project_id' => $project->id,
                     'amenity_id' => $amenity,
                 ]);
-            }      
+            }
         }catch(Exception $e){
             return response(['payload'=>$e]);
 
@@ -248,7 +248,7 @@ Route::post('/create_project',function(){
     }
 
     if(count(Request()->post('comunityAmenities')) > 0){
-        
+
 
         try{
             foreach(Request()->post('comunityAmenities') as $amenity){
@@ -256,20 +256,20 @@ Route::post('/create_project',function(){
                     'project_id' => $project->id,
                     'community_amenity_id' => $amenity,
                 ]);
-            }   
+            }
         }catch(Exception $e){
             return response(['payload'=>$e]);
 
         }
     }
 
-   
+
     if(count(Request()->post('availableUnites')) > 0){
         try{
             $floor3ds = Request()->post('floor3ds');
             $floorPlans = Request()->post('floorPlans');
             $bedrooms = Request()->post('bedrooms');
-        
+
             foreach(Request()->post('availableUnites') as $unitNumber){
                 Project_size::create([
                     'project_id' => $project->id,
@@ -284,7 +284,7 @@ Route::post('/create_project',function(){
 
         }
     }
-    
+
     ProjectRecored::create([
         'project_id' => $project->id,
         'data' => json_encode(Request()->post()),
@@ -294,22 +294,22 @@ Route::post('/create_project',function(){
         return response(['payload'=>$e]);
 
     }
-    
+
     return response(['payload'=>Request()->post()]);
 
 });
 
 Route::get('/get-project-recored' , function(){
-    $project_recored = ProjectRecored::findOrFail(Request()->get('project_id'));
+    $project_recored = ProjectRecored::where('project_id',Request()->get('project_id'))->first();
 
-    return response(['payload' => $project_recored->data]);
+    return response(['payload' => json_decode($project_recored->data)]);
 });
 
 Route::post('update_project',function(){
 
     try{
         $project_id = Request()->get('project_id');
-        $project = Project::findOrFail($project_id);    
+        $project = Project::findOrFail($project_id);
 
         $project->update([
             "title" => Request()->post('title'),
@@ -364,8 +364,8 @@ Route::post('update_project',function(){
         }
     }
 
-    //Todo type size 
-    
+    //Todo type size
+
 
     if(Request()->post('right') != null){
         try{
@@ -409,15 +409,15 @@ Route::post('update_project',function(){
     }
 
     if(count(Request()->post('amenities')) > 0){
-        
-    
+
+
         try{
             foreach(Request()->post('amenities') as $amenity){
                 Amenity_project::create([
                     'project_id' => $project->id,
                     'amenity_id' => $amenity,
                 ]);
-            }      
+            }
         }catch(Exception $e){
             return response(['payload'=>$e]);
 
@@ -425,7 +425,7 @@ Route::post('update_project',function(){
     }
 
     if(count(Request()->post('comunityAmenities')) > 0){
-        
+
 
         try{
             foreach(Request()->post('comunityAmenities') as $amenity){
@@ -433,20 +433,20 @@ Route::post('update_project',function(){
                     'project_id' => $project->id,
                     'community_amenity_id' => $amenity,
                 ]);
-            }   
+            }
         }catch(Exception $e){
             return response(['payload'=>$e]);
 
         }
     }
 
-   
+
     if(count(Request()->post('availableUnites')) > 0){
         try{
             $floor3ds = Request()->post('floor3ds');
             $floorPlans = Request()->post('floorPlans');
             $bedrooms = Request()->post('bedrooms');
-        
+
             foreach(Request()->post('availableUnites') as $unitNumber){
                 Project_size::create([
                     'project_id' => $project->id,
@@ -461,7 +461,7 @@ Route::post('update_project',function(){
 
         }
     }
-    
+
     ProjectRecored::create([
         'project_id' => $project->id,
         'data' => json_encode(Request()->post()),
@@ -471,7 +471,7 @@ Route::post('update_project',function(){
         return response(['payload'=>$e]);
 
     }
-    
+
     return response(['payload'=>Request()->post()]);
 });
 
