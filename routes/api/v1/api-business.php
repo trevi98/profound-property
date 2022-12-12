@@ -307,8 +307,8 @@ Route::get('/get-project-recored' , function(){
 
 Route::post('update_project',function(){
 
+    $project_id = request()->post('project_id');
     try{
-        $project_id = Request()->get('project_id');
         $project = Project::findOrFail($project_id);
 
         $project->update([
@@ -337,14 +337,14 @@ Route::post('update_project',function(){
             "type_id" => Request()->post('type_id')
         ]);
     }catch(Exception $e){
-        return response(['payload'=>$e]);
+        return response(['payload'=>$e->getMessage()]);
 
     }
 
     try{
-        $payment_plans = Payment_plans::where('project_id', $project_id)->get();
+        $payment_plans = Payment_plan::where('project_id', $project_id)->get();
         foreach($payment_plans as $i =>$payment_plan){
-            $payment_plan::update( ['title'=>$payment['title'],'pricentage'=>$payment['precentages'],'project_id'=>$project->id]);
+            $payment_plan->update( ['title'=>Request()->post('paymenPlans')[$i]['title'],'pricentage'=>Request()->post('paymenPlans')[$i]['precentages'],'project_id'=>$project_id]);
         }
 
     }catch(Exception $e){
@@ -352,6 +352,12 @@ Route::post('update_project',function(){
 
     }
 
+
+    //delete project images before insertion
+    $project_images = Project_Img::where('project_id',$project_id)->get();
+    foreach($project_images as $project_image){
+        $project_image->delete();
+    }
     if(count(Request()->post('images')) > 0){
         try{
             foreach(Request()->post('images') as $image){
@@ -363,9 +369,6 @@ Route::post('update_project',function(){
 
         }
     }
-
-    //Todo type size
-
 
     if(Request()->post('right') != null){
         try{
@@ -407,6 +410,12 @@ Route::post('update_project',function(){
             return response(['payload'=>$e]);
         }
     }
+    
+    //delete AP:Amenity Projects before insertion
+    $AP = Amenity_project::where('project_id',$project_id)->get();
+    foreach($AP as $ap){
+        $ap->delete();
+    }
 
     if(count(Request()->post('amenities')) > 0){
 
@@ -424,8 +433,13 @@ Route::post('update_project',function(){
         }
     }
 
-    if(count(Request()->post('comunityAmenities')) > 0){
+    //delete cap:ComunityAmenity_project before insertion
+    $CAP = ComunityAmenity_project::where('project_id',$project_id)->get();
+    foreach($CAP as $cap){
+        $cap->delete();
+    }
 
+    if(count(Request()->post('comunityAmenities')) > 0){
 
         try{
             foreach(Request()->post('comunityAmenities') as $amenity){
@@ -440,6 +454,10 @@ Route::post('update_project',function(){
         }
     }
 
+    $project_sizes = Project_size::where('project_id',$project_id)->get();
+    foreach($project_sizes as $project_size){
+        $project_size->delete();
+    }
 
     if(count(Request()->post('availableUnites')) > 0){
         try{
@@ -462,8 +480,9 @@ Route::post('update_project',function(){
         }
     }
 
-    ProjectRecored::create([
-        'project_id' => $project->id,
+
+    $project_recored = ProjectRecored::where('project_id' , $project_id)->first();
+    $project_recored->update([
         'data' => json_encode(Request()->post()),
     ]);
     try{

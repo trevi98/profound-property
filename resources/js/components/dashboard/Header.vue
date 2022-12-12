@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[100px] bg-[#fff] flex justify-between items-center px-[20px]">
+  <div class="w-[100%] mx-auto h-[100px] bg-[#fff] flex justify-between items-center px-[5%]">
     <router-link :to="{name:'main'}">
         <img src="/images/logo-hg.png" alt="" class="max-w-[250px]">
     </router-link>

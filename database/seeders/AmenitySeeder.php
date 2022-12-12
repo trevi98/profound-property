@@ -15,7 +15,7 @@ class AmenitySeeder extends Seeder
     public function run()
     {
         //
-        for($i=1;$i<10;$i++){
+        for($i=1;$i<40;$i++){
 
             DB::table('amenities')->insert([
                 'title' => "amenity".$i,

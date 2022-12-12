@@ -1,7 +1,6 @@
 require('./bootstrap');
 require('../sass/app.scss')
 
-
 import { createApp } from 'vue'
 import App from './app.vue'
 import router from './routes/home'
@@ -264,7 +263,6 @@ let store = createStore({
         }
     }
 })
-
 
 createApp(App).use(VueCookies).use(store).use(router).mount('#app')
 

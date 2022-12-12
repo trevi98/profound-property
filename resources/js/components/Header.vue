@@ -1,5 +1,4 @@
 <template>
-
     <div class=" h-[80vh] bg-center bg-cover relative" id="mbg" ref="mbg" :style="{ backgroundImage: 'url(/images/' + image + ')' }">
         <MainSlider :featuredProjects="featuredProjects"/>
         <Nav>

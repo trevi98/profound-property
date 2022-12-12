@@ -29,6 +29,7 @@ class CreatePropertiesTable extends Migration
             $table->boolean('sold')->default(false);
             $table->string('area');
             $table->string('category')->default('rent');
+            $table->string('market_category')->deafult('Residential');
             $table->foreignId('user_id')->nullOnDelete();
             $table->foreignId('location_id')->nullOnDelete();
             $table->foreignId('type_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
