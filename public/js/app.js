@@ -28324,14 +28324,14 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_5 = [_hoisted_3, _hoisted_4];
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "text-xl pt-[25px] text-[#0b3a43]"
-}, " YEAR ", -1 /* HOISTED */);
+}, " MONTH ", -1 /* HOISTED */);
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "radio",
   name: "radio",
   id: "",
   value: "year"
 }, null, -1 /* HOISTED */);
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, " Default price ", -1 /* HOISTED */);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, " WEEK ", -1 /* HOISTED */);
 var _hoisted_9 = [_hoisted_7, _hoisted_8];
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "text-xl pt-[25px] text-[#0b3a43]"
@@ -29478,9 +29478,9 @@ var _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "flex flex-col gap-[20px]"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-b-[1px] border-[#000] w-full py-[5px]"
-}, " Last updated: 28/5/1998 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Last updated: 12/12/2022 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-b-[1px] border-[#000] w-full py-[5px]"
-}, " Creation date: 28/5/1998 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Creation date: 12/12/2022 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-b-[1px] border-[#000] w-full py-[5px]"
 }, " Created by: Agent ")], -1 /* HOISTED */);
 var _hoisted_86 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-col gap-[5px]\"><div class=\"text-lg pb-[5px]\"> Property permit </div><div> Select your license type </div><div class=\"flex flex-col gap-[5px]\"><div class=\"flex gap-[10px]\"><input type=\"radio\" name=\"permit\" value=\"rera\"><div> RERA </div></div><div class=\"flex gap-[10px]\"><input type=\"radio\" name=\"permit\" value=\"dtcm\"><div> DTCM </div></div></div></div>", 1);
@@ -30021,9 +30021,9 @@ var _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "flex flex-col gap-[20px]"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-b-[1px] border-[#000] w-full py-[5px]"
-}, " Last updated: 28/5/1998 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Last updated: 12/12/2022 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-b-[1px] border-[#000] w-full py-[5px]"
-}, " Creation date: 28/5/1998 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Creation date: 12/12/2022 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-b-[1px] border-[#000] w-full py-[5px]"
 }, " Created by: Agent ")], -1 /* HOISTED */);
 var _hoisted_86 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-col gap-[5px]\"><div class=\"text-lg pb-[5px]\"> Property permit </div><div> Select your license type </div><div class=\"flex flex-col gap-[5px]\"><div class=\"flex gap-[10px]\"><input type=\"radio\" name=\"permit\" value=\"rera\"><div> RERA </div></div><div class=\"flex gap-[10px]\"><input type=\"radio\" name=\"permit\" value=\"dtcm\"><div> DTCM </div></div></div></div>", 1);

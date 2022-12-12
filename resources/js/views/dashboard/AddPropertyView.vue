@@ -344,10 +344,10 @@
         <div class=" w-[30%] mt-[20px] flex flex-col gap-[30px]">
             <div class="flex flex-col gap-[20px]">
                 <div class="border-b-[1px] border-[#000] w-full py-[5px]">
-                    Last updated: 28/5/1998
+                    Last updated: 12/12/2022
                 </div>
                 <div class="border-b-[1px] border-[#000] w-full py-[5px]">
-                    Creation date: 28/5/1998
+                    Creation date: 12/12/2022
                 </div>
                 <div class="border-b-[1px] border-[#000] w-full py-[5px]">
                     Created by: Agent

@@ -16,7 +16,7 @@
         </div>
         <div :class="containerClass">
             <div class="text-xl pt-[25px] text-[#0b3a43]">
-                YEAR
+                MONTH
             </div>
             <div>
                 <input type="text" :class="inputClass" placeholder="Price in AED">
@@ -24,7 +24,7 @@
             <div :class="radioDivClass">
                 <input type="radio" name="radio" id="" value="year">
                 <div>
-                    Default price
+                    WEEK
                 </div>
             </div>
         </div>
