@@ -1,16 +1,15 @@
 <template>
     <!-- <router-link :to="{name:'xx'}">Go to Foo</router-link> -->
-    <router-view/>
-
+    <router-view />
 </template>
 <script>
-import Header from './components/Header.vue';
+import Header from "./components/Header.vue";
 export default {
-    components:{Header},
+    components: { Header },
     data() {
         return {
-            message: 'Hello World'
-        }
-    }
+            message: "Hello World",
+        };
+    },
 };
 </script>
