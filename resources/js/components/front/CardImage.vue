@@ -1,16 +1,16 @@
 <template>
-    <div class="flex pb-4">
-        <div>
+    <div class="flex pb-4 cursor-pointer hover:scale-[1.06] transition-[2s]">
+        <div class="flex-[0.95]">
             <img
-                src="../../../assets/dubai1.jpg"
+                src="./images/331.png"
                 class="rounded-tl-[24px] rounded-bl-[24px]"
                 alt=""
             />
         </div>
         <div
-            class="bg-[#0E373F] rounded-tr-[24px] rounded-br-[24px] py-8 px-9 flex flex-column justify-between"
+            class="bg-[#0E373F] rounded-tr-[24px] rounded-br-[24px] py-8 px-9 flex flex-column justify-between flex-[0.5]"
         >
-            <div class="">
+            <div>
                 <h2 class="text-5xl text-[#ffffff] pb-2 text-center">
                     Farm gardens the valley
                 </h2>
@@ -51,16 +51,6 @@
                 </svg>
             </div>
         </div>
-        <!-- <Card show="true" class="rounded-tl-none rounded-bl-none">
-            <span class="text-center text-[#9E9E9E]"
-                >Farm gardens the valley</span
-            >
-            <p class="text-center text-[#9E9E9E]">
-                Offering innovative, institutional-caliber investment expertise
-                and solutions.Offering innovative, institutional-caliber
-                investment expertise and solutions.
-            </p>
-        </Card> -->
     </div>
 </template>
 

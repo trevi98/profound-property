@@ -1,8 +1,6 @@
 <template>
-    <div class="main relative">
+    <div class="main relative hover:cursor-pointer">
         <img src="./images/unsplash.png" alt="" class="rounded-[24px] image" />
-        <!-- card layout -->
-        <!-- <div class="layout"></div> -->
         <div
             class="absolute top-0 p-4 text-center flex flex-column justify-between h-[100%]"
         >
@@ -16,7 +14,7 @@
                     institutional-caliber investment expertise and solutions.
                 </p>
             </div>
-            <div class="flex items-center cursor-pointer">
+            <div class="flex items-center">
                 <p class="text-xl text-[#ffffff] mr-3 show2">Learn more</p>
                 <svg
                     width="24"
@@ -48,9 +46,7 @@
 </template>
 
 <script>
-export default {
-    props: [],
-};
+export default {};
 </script>
 
 <style scoped>
@@ -65,19 +61,19 @@ export default {
 }
 .main:hover h2 {
     animation-name: movee;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
 .main:hover .show1 {
     animation-name: show1;
-    animation-delay: 1s;
-    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
 .main:hover .show2 {
     animation-name: show2;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
 @keyframes movee {
@@ -105,19 +101,6 @@ export default {
         opacity: 1;
     }
 }
-/* .layout {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgb(0, 0, 0, 40%);
-    top: 0;
-    border-radius: 24px;
-    transition: 0.3s;
-    opacity: 0;
-}
-.main:hover .layout {
-    opacity: 1;
-} */
 .main:hover .image {
     filter: brightness(0.7);
 }

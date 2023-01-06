@@ -3,10 +3,10 @@
         <ViewAll name="Popular Areas in Dubai" />
 
         <div
-            class="grid gap-y-6 gap-x-[31px] h-[800px] grid-rows-[repeat(12,1fr)] grid-cols-[repeat(12,1fr)]"
+            class="grid gap-y-6 gap-x-[31px] h-[800px] grid-rows-[repeat(12,1fr)] grid-cols-[repeat(12,1fr)] hover:cursor-pointer"
         >
             <div
-                class="bg-[url(/images/551.png)] col-[span_8] row-[span_4] p-6 relative rounded-[24px] layout"
+                class="bg-[url(/images/551.png)] col-[span_8] row-[span_4] p-6 relative rounded-[24px] layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
                     <h4 class="text-3xl text-[#ffffff]">
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div
-                class="bg-[url(/images/FB_IMG.png)] col-[span_4] row-[span_8] relative rounded-[24px] p-6 layout"
+                class="bg-[url(/images/FB_IMG.png)] col-[span_4] row-[span_8] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
                     <h4 class="text-3xl text-[#ffffff]">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div
-                class="bg-[url(/images/photo.png)] col-[span_5] row-[span_4] relative rounded-[24px] p-6 layout"
+                class="bg-[url(/images/photo.png)] col-[span_5] row-[span_4] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
                     <h4 class="text-3xl text-[#ffffff]">
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div
-                class="bg-[url(/images/photo_2021.png)] col-[span_3] row-[span_4] relative rounded-[24px] p-6 layout"
+                class="bg-[url(/images/photo_2021.png)] col-[span_3] row-[span_4] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
                     <h4 class="text-3xl text-[#ffffff]">
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div
-                class="bg-[url(/images/661.png)] col row-[span_4] col-[span_6] relative rounded-[24px] p-6 layout"
+                class="bg-[url(/images/661.png)] col row-[span_4] col-[span_6] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
                     <h4 class="text-3xl text-[#ffffff]">
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div
-                class="bg-[url(/images/661.png)] row-[span_4] col-[span_6] relative rounded-[24px] p-6 layout"
+                class="bg-[url(/images/661.png)] row-[span_4] col-[span_6] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
                     <h4 class="text-3xl text-[#ffffff]">
@@ -100,5 +100,9 @@ export default {
     top: 0;
     left: 0;
     border-radius: 24px;
+}
+.layout:hover {
+    transform: scale(1.06);
+    transition: 0.2s;
 }
 </style>

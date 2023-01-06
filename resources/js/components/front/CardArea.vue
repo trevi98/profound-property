@@ -1,5 +1,7 @@
 <template>
-    <div class="pb-10 w-[calc(96%/4)] flex-[25%]">
+    <div
+        class="pb-10 w-[calc(96%/4)] flex-[25%] hover:cursor-pointer transition-[1s]"
+    >
         <img
             src="../../../assets/project1.jpg"
             class="rounded-[24px] w-[297px] h-[200px]"

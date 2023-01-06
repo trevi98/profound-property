@@ -1,42 +1,46 @@
 <template>
-    <swiper
-        :slidesPerView="3"
-        :spaceBetween="30"
-        :slidesPerGroup="3"
-        :loop="true"
-        :loopFillGroupWithBlank="true"
-        :pagination="{
-            clickable: true,
-        }"
-        :navigation="true"
-        :modules="modules"
-    >
-        <slot></slot>
-    </swiper>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+            <Card class="swiper-slide" />
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 </template>
-<script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
 
-// Import Swiper styles
-
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// import required modules
-import { Pagination, Navigation } from "swiper";
-
+<script src="../../../js/swiper-bundle.min.js">
+import "../../../css/swiper-bundle.min"
+import Card from "./Card.vue"
 export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        return {
-            modules: [Pagination, Navigation],
-        };
-    },
-};
+    components:{
+        Card
+    }
+
+}
+   var swiper = new Swiper(".main", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
 </script>
 
-<style scoped></style>
+<style></style>

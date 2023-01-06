@@ -5,6 +5,7 @@
             <Card />
             <Card />
             <Card />
+            <!-- <Slide /> -->
         </div>
         <ViewAll name="Water Front" />
         <CardImage />
@@ -56,10 +57,10 @@
 import ViewAll from "./ViewAll.vue";
 import Card from "./Card.vue";
 import CardImage from "./CardImage.vue";
-// import Slide from "./Slide.vue";
+import Slide from "./Slide.vue";
 
 export default {
-    components: { ViewAll, Card, CardImage },
+    components: { ViewAll, Card, CardImage, Slide },
 };
 </script>
 

@@ -10,32 +10,32 @@
         </h1>
         <div class="flex justify-center items-center pb-10 pt-8 relative">
             <div
-                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px]"
+                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] hover:cursor-pointer"
             >
                 <img src="./images/download1.png" alt="" />
             </div>
             <div
-                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8"
+                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8 hover:cursor-pointer"
             >
                 <img src="./images/download2.png" alt="" />
             </div>
             <div
-                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8"
+                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8 hover:cursor-pointer"
             >
                 <img src="./images/Vector1.png" alt="" />
             </div>
             <div
-                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8"
+                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8 hover:cursor-pointer"
             >
                 <img src="./images/sobha-realty-logo.png" alt="" />
             </div>
             <div
-                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8"
+                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8 hover:cursor-pointer"
             >
                 <img src="./images/download3.png" alt="" />
             </div>
             <div
-                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8"
+                class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] ml-8 hover:cursor-pointer"
             >
                 <img src="./images/download6.png" alt="" />
             </div>
@@ -80,7 +80,7 @@ export default {};
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgb(0, 0, 0, 80%);
+    background: rgb(0 54 63 / 90%);
     top: 0;
     left: 0;
 }

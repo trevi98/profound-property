@@ -14,14 +14,16 @@
             <router-link :to="{ name: 'home' }" class="text-xl text-[#ffffff]">
                 Sell
             </router-link>
-            <NavDown name="Areas" show="true" class="area">
+            <NavDown name="Areas" class="area">
                 <Area />
             </NavDown>
-            <NavDown name="Projects" show="true" />
-            <NavDown name="Developers" show="true" />
-            <NavDown name="Services" show="true" />
-            <NavDown name="About us" show="true" />
-            <NavDown name="EN" show="true" />
+            <NavDown name="Projects" class="projects">
+                <Projects />
+            </NavDown>
+            <NavDown name="Developers" />
+            <NavDown name="Services" />
+            <NavDown name="About us" />
+            <NavDown name="EN" />
             <svg
                 width="24"
                 height="24"
@@ -176,9 +178,10 @@
 <script>
 import NavDown from "./NavDown.vue";
 import Area from "./Area.vue";
+import Projects from "./Projects.vue";
 import SelectSearch from "./SelectSearch.vue";
 export default {
-    components: { NavDown, Area, SelectSearch },
+    components: { NavDown, Area, SelectSearch, Projects },
     data() {
         return {
             propertyes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -191,10 +194,12 @@ export default {
 </script>
 
 <style>
-.area:hover {
-    color: #fff;
-}
-.area:hover .down {
+.area:hover .area_down {
     display: block;
+    opacity: 1;
+}
+.projects:hover .project_down {
+    display: block;
+    opacity: 1;
 }
 </style>
