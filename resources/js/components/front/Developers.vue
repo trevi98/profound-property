@@ -1,9 +1,14 @@
 <template>
-    <div class="bg-[#000000] px-20 mb-20">
-        <h1 class="text-4xl text-[#ffffff] text-center pt-16 font-bold">
+    <div
+        class="bg-[url(/images/FB_IMG_16.png)] bg-center bg-no-repeat bg-cover relative px-20 mb-20 layout"
+    >
+        <!-- <img src="./images/FB_IMG_16.png" alt="" /> -->
+        <h1
+            class="text-4xl text-[#ffffff] text-center pt-16 font-bold relative"
+        >
             Developers
         </h1>
-        <div class="flex justify-center items-center pb-10 pt-8">
+        <div class="flex justify-center items-center pb-10 pt-8 relative">
             <div
                 class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px]"
             >
@@ -35,7 +40,7 @@
                 <img src="./images/download6.png" alt="" />
             </div>
         </div>
-        <div class="flex items-center justify-center pb-16">
+        <div class="flex items-center justify-center pb-16 relative">
             <p class="text-3xl mr-4 text-[#ffffff]">View all Developers</p>
             <svg
                 width="24"
@@ -69,4 +74,15 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.layout::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 80%);
+    top: 0;
+    left: 0;
+}
+</style>
+>

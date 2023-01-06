@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#000000] p-16 flex justify-between items-center">
+    <div class="bg-[#00363F] p-16 flex justify-between items-center">
         <img src="../../../assets/w-logo.png" alt="" class="w-[300px]" />
         <div class="flex justify-between w-[20%]">
             <svg

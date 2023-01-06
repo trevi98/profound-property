@@ -1,6 +1,6 @@
 <template>
     <div class="px-20 pb-32">
-        <h1 class="text-4xl text-[#000000] text-left pb-8">
+        <h1 class="text-4xl text-[#0E373F] text-left pb-8">
             Media Publication’s
         </h1>
         <div class="flex justify-between">

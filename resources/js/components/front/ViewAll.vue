@@ -1,9 +1,8 @@
 <template>
     <div class="flex justify-between pb-6">
-        <h4 class="text-[#000000] text-5xl">{{ name }}</h4>
+        <h4 class="text-[#0E373F] text-5xl">{{ name }}</h4>
         <div
             class="flex justify-between border-[ #424242] border-2 border-solid px-6 py-1 items-center rounded-[10px] cursor-pointer"
-            :class="{ 'bg-[#757575]': show === 'true' }"
         >
             <p class="text-[#424242] pr-4">View all</p>
             <svg
@@ -36,12 +35,7 @@
 
 <script>
 export default {
-    props: ["name", "show"],
-    data() {
-        return {
-            colot: "#757575",
-        };
-    },
+    props: ["name"],
 };
 </script>
 

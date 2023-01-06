@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-[#212121] mb-20">
+    <div class="bg-[url(/images/Luxury.png)] mb-20 relative layout">
         <div
-            class="pt-24 flex items-center justify-end flex-col text-[#ffffff]"
+            class="pt-24 flex items-center justify-end flex-col text-[#ffffff] relative pl-[40rem]"
         >
             <h2
                 class="text-5xl tracking-[-0.005em] border-b-4 border-[#ffffff] border-solid p-3 mb-4"
@@ -45,4 +45,13 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.layout::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 40%);
+    top: 0;
+}
+</style>

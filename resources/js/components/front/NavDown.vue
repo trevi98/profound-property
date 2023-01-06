@@ -1,9 +1,8 @@
 <template>
-    <div class="flex items-center cursor-pointer hover:text-[#ffffff]">
-        <p v-if="show" class="mr-2 text-xl text-[#212121]">
-            {{ name }}
-        </p>
-        <p v-if="!show" class="mr-2 text-sm text-[#000000]">
+    <div
+        class="flex items-center hover:cursor-pointer hover:text-[#ffffff] py-4"
+    >
+        <p class="mr-2 text-xl text-[#ffffff]">
             {{ name }}
         </p>
         <svg
@@ -15,7 +14,7 @@
         >
             <path
                 d="M16.92 0.950001L10.4 7.47C9.63002 8.24 8.37002 8.24 7.60002 7.47L1.08002 0.950001"
-                stroke="#212121"
+                stroke="#ffffff"
                 stroke-width="1.5"
                 stroke-miterlimit="10"
                 stroke-linecap="round"
@@ -28,7 +27,7 @@
 
 <script>
 export default {
-    props: ["name", "show"],
+    props: ["name"],
 };
 </script>
 

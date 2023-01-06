@@ -3,8 +3,8 @@
         <ViewAll name="Offplan Latest Launches" />
         <div class="flex justify-between pb-20">
             <Card />
-            <Card show="true" class="ml-[1%]" />
-            <Card class="ml-[1%]" />
+            <Card />
+            <Card />
         </div>
         <ViewAll name="Water Front" />
         <CardImage />
@@ -40,14 +40,14 @@
         <ViewAll name="Buying Property in Dubai" />
         <div class="flex justify-between pb-20">
             <Card />
-            <Card show="true" class="ml-[1%]" />
-            <Card class="ml-[1%]" />
+            <Card />
+            <Card />
         </div>
-        <ViewAll name="Renting a Property in Dubai" show="true" />
+        <ViewAll name="Renting a Property in Dubai" />
         <div class="flex justify-between pb-20">
             <Card />
-            <Card show="true" class="ml-[1%]" />
-            <Card class="ml-[1%]" />
+            <Card />
+            <Card />
         </div>
     </div>
 </template>
@@ -56,6 +56,7 @@
 import ViewAll from "./ViewAll.vue";
 import Card from "./Card.vue";
 import CardImage from "./CardImage.vue";
+// import Slide from "./Slide.vue";
 
 export default {
     components: { ViewAll, Card, CardImage },

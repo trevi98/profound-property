@@ -33,10 +33,12 @@
         "@fortawesome/vue-fontawesome": "^3.0.2",
         "@vueform/multiselect": "^2.5.7",
         "install": "^0.13.0",
+        "swiper": "^8.4.5",
         "tinymce": "^6.3.0",
         "vue-cookies": "^1.8.2",
         "vue-router": "^4.1.6",
         "vue-server-renderer": "^2.7.14",
+        "vue-swiper": "^0.5.0",
         "vuex": "^4.0.2"
     }
 }
