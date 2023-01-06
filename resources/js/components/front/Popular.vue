@@ -104,9 +104,10 @@ export default {
 .layout {
     background-position: center;
     transition: background-size 0.4s ease-in;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 .layout:hover {
-    background-size: 130%;
-    background-repeat: no-repeat;
+    background-size: 120%;
 }
 </style>
