@@ -6,7 +6,7 @@
             class="grid gap-y-6 gap-x-[31px] h-[800px] grid-rows-[repeat(12,1fr)] grid-cols-[repeat(12,1fr)] hover:cursor-pointer"
         >
             <div
-                class="bg-[url(/images/551.png)] col-[span_8] row-[span_4] p-6 relative rounded-[24px] layout hover:cursor-pointer"
+                class="bg-[url(/images/551.png)] col-[span_8] row-[span_4] p-6 relative rounded-[24px] bg-center layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
                     <h4 class="text-3xl text-[#ffffff]">
@@ -101,8 +101,12 @@ export default {
     left: 0;
     border-radius: 24px;
 }
+.layout {
+    background-position: center;
+    transition: background-size 0.4s ease-in;
+}
 .layout:hover {
-    transform: scale(1.06);
-    transition: 0.2s;
+    background-size: 130%;
+    background-repeat: no-repeat;
 }
 </style>

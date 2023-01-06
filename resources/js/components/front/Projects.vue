@@ -27,7 +27,7 @@ export default {
     display: none;
     opacity: 0;
 }
-/* .one:hover {
+.one:hover {
     transform: scaleX(1.2);
 }
 .two:hover {
@@ -47,5 +47,5 @@ export default {
 .three:hover .two,
 .three:hover .one {
     transform: scaleX(0.8);
-} */
+}
 </style>

@@ -1,9 +1,9 @@
 <template>
-    <div class="flex pb-4 cursor-pointer hover:scale-[1.06] transition-[2s]">
+    <div class="flex pb-4 cursor-pointer">
         <div class="flex-[0.95]">
             <img
                 src="./images/331.png"
-                class="rounded-tl-[24px] rounded-bl-[24px]"
+                class="rounded-tl-[24px] rounded-bl-[24px] h-[100%]"
                 alt=""
             />
         </div>
