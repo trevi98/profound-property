@@ -6,7 +6,7 @@
             >
                 <img
                     src="../../../assets/project1.jpg"
-                    class="transition-[0.3s] m-w-[297px] min-h-[297px]"
+                    class="transition-[0.4s] m-w-[297px] min-h-[297px]"
                     alt=""
                 />
             </div>
@@ -33,6 +33,6 @@ export default {};
     z-index: 1;
 }
 .layout:hover img {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 </style>

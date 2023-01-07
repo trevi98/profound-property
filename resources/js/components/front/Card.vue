@@ -137,7 +137,23 @@ export default {};
     left: 0;
     opacity: 0;
 }
+@keyframes opa {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
 .main:hover::before {
-    opacity: 1;
+    animation-name: opa;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 </style>

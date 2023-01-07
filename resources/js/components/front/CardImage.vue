@@ -7,7 +7,7 @@
                 <div class="relative layout">
                     <img
                         src="./images/331.png"
-                        class="h-[100%] w-[100%] transition-[0.3s]"
+                        class="h-[100%] w-[100%] transition-[0.4s]"
                         alt=""
                     />
                 </div>
@@ -80,6 +80,6 @@ export default {
     z-index: 1;
 }
 .layout:hover img {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 </style>
