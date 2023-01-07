@@ -1,5 +1,5 @@
 <template>
-    <div class="py-4 border-solid border-[#212121] border-b-2">
+    <div class="py-4 border-solid border-[#212121] border-b-2 w-[100%]">
         <h2 class="text-[#424242] text-2xl pb-4 font-bold">
             Farm gardens the valley
         </h2>

@@ -4,7 +4,7 @@
             Media Publication’s
         </h1>
         <div class="flex justify-between">
-            <div class="flex w-[50%] flex-wrap">
+            <div class="flex justify-between w-[50%] flex-wrap">
                 <FarmGardens height="true" width="true" />
                 <FarmGardens height="true" width="true" />
                 <FarmGardens height="true" width="true" />

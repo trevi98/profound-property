@@ -202,4 +202,7 @@ export default {
     display: block;
     opacity: 1;
 }
+a:hover {
+    color: inherit;
+}
 </style>

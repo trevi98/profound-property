@@ -96,7 +96,7 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgb(0, 0, 0, 40%);
+    background: rgb(0 54 63 / 40%);
     top: 0;
     left: 0;
     border-radius: 24px;
@@ -105,9 +105,9 @@ export default {
     background-position: center;
     transition: background-size 0.4s ease-in;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 120%;
 }
 .layout:hover {
-    background-size: 120%;
+    background-size: 140%;
 }
 </style>
