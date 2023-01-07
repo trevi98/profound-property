@@ -1,5 +1,5 @@
 <template>
-    <div class="px-20 pb-32">
+    <div class="px-20 pb-20">
         <h1 class="text-4xl text-[#0E373F] text-left pb-8">
             Media Publication’s
         </h1>

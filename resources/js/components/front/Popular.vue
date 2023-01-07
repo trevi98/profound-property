@@ -8,73 +8,91 @@
             <div
                 class="bg-[url(/images/551.png)] col-[span_8] row-[span_4] p-6 relative rounded-[24px] bg-center layout hover:cursor-pointer"
             >
-                <div class="relative flex flex-column h-[100%] justify-end">
-                    <h4 class="text-3xl text-[#ffffff]">
-                        Farm gardens the valley
-                    </h4>
-                    <p class="text-[#F5F5F5] text-xl">
-                        Farm gardens the valley
-                    </p>
+                <div class="relative flex h-[100%] justify-between items-end">
+                    <div>
+                        <h4 class="text-[29px] leading-[44px] text-[#F5F5F5]">
+                            Farm gardens the valley
+                        </h4>
+                        <p class="text-[#F5F5F5] text-xl">
+                            Farm gardens the valley
+                        </p>
+                    </div>
+                    <p class="text-[#F5F5F5] text-xl">Area: 1200 Sq. M.</p>
                 </div>
             </div>
             <div
                 class="bg-[url(/images/FB_IMG.png)] col-[span_4] row-[span_8] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
-                    <h4 class="text-3xl text-[#ffffff]">
-                        Farm gardens the valley
-                    </h4>
-                    <p class="text-[#F5F5F5] text-xl">
-                        Farm gardens the valley
-                    </p>
+                    <div class="pb-4">
+                        <h4 class="text-[29px] leading-[44px] text-[#F5F5F5]">
+                            Farm gardens the valley
+                        </h4>
+                        <p class="text-[#F5F5F5] text-xl">
+                            Farm gardens the valley
+                        </p>
+                    </div>
+                    <p class="text-[#F5F5F5] text-xl">Area: 1200 Sq. M.</p>
                 </div>
             </div>
             <div
                 class="bg-[url(/images/photo.png)] col-[span_5] row-[span_4] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
-                    <h4 class="text-3xl text-[#ffffff]">
-                        Farm gardens the valley
-                    </h4>
-                    <p class="text-[#F5F5F5] text-xl">
-                        Farm gardens the valley
-                    </p>
+                    <div class="pb-4">
+                        <h4 class="text-[29px] leading-[44px] text-[#F5F5F5]">
+                            Farm gardens the valley
+                        </h4>
+                        <p class="text-[#F5F5F5] text-xl">
+                            Farm gardens the valley
+                        </p>
+                    </div>
+                    <p class="text-[#F5F5F5] text-xl">Area: 1200 Sq. M.</p>
                 </div>
             </div>
             <div
                 class="bg-[url(/images/photo_2021.png)] col-[span_3] row-[span_4] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
                 <div class="relative flex flex-column h-[100%] justify-end">
-                    <h4 class="text-3xl text-[#ffffff]">
-                        Farm gardens the valley
-                    </h4>
-                    <p class="text-[#F5F5F5] text-xl">
-                        Farm gardens the valley
-                    </p>
+                    <div class="pb-4">
+                        <h4 class="text-[29px] leading-[44px] text-[#F5F5F5]">
+                            Farm gardens the valley
+                        </h4>
+                        <p class="text-[#F5F5F5] text-xl">
+                            Farm gardens the valley
+                        </p>
+                    </div>
+                    <p class="text-[#F5F5F5] text-xl">Area: 1200 Sq. M.</p>
                 </div>
             </div>
             <div
                 class="bg-[url(/images/661.png)] col row-[span_4] col-[span_6] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
-                <div class="relative flex flex-column h-[100%] justify-end">
-                    <h4 class="text-3xl text-[#ffffff]">
-                        Farm gardens the valley
-                    </h4>
-                    <p class="text-[#F5F5F5] text-xl">
-                        Farm gardens the valley
-                    </p>
+                <div class="relative flex h-[100%] justify-between items-end">
+                    <div>
+                        <h4 class="text-[29px] leading-[44px] text-[#F5F5F5]">
+                            Farm gardens the valley
+                        </h4>
+                        <p class="text-[#F5F5F5] text-xl">
+                            Farm gardens the valley
+                        </p>
+                    </div>
+                    <p class="text-[#F5F5F5] text-xl">Area: 1200 Sq. M.</p>
                 </div>
             </div>
             <div
                 class="bg-[url(/images/661.png)] row-[span_4] col-[span_6] relative rounded-[24px] p-6 layout hover:cursor-pointer"
             >
-                <div class="relative flex flex-column h-[100%] justify-end">
-                    <h4 class="text-3xl text-[#ffffff]">
-                        Farm gardens the valley
-                    </h4>
-                    <p class="text-[#F5F5F5] text-xl">
-                        Farm gardens the valley
-                    </p>
+                <div class="relative flex h-[100%] justify-between items-end">
+                    <div>
+                        <h4 class="text-[29px] leading-[44px] text-[#F5F5F5]">
+                            Farm gardens the valley
+                        </h4>
+                        <p class="text-[#F5F5F5] text-xl">
+                            Farm gardens the valley
+                        </p>
+                    </div>
+                    <p class="text-[#F5F5F5] text-xl">Area: 1200 Sq. M.</p>
                 </div>
             </div>
         </div>

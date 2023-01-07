@@ -2,7 +2,7 @@
     <div
         class="project_down absolute top-[5%] left-[80px] w-[calc(100%-160px)] bg-[#ffffff] py-3 px-5 transition-[2s] slide-bottom rounded-[10px] hover:cursor-context-menu z-[1]"
     >
-        <div class="flex m-w-[800px] justify-between py-12">
+        <div class="flex m-w-[800px] gap-6 py-12">
             <CardProject class="one" />
             <CardProject class="two" />
             <CardProject class="three" />
@@ -27,16 +27,16 @@ export default {
     display: none;
     opacity: 0;
 }
-.one:hover {
-    transform: scaleX(1.2);
+/* .one:hover {
+    flex: 1.1 1 0%;
 }
 .two:hover {
-    transform: scaleX(1.2);
+    flex: 1.5;
 }
 .three:hover {
-    transform: scaleX(1.2);
-}
-.one:hover .two,
+    flex: 1.5;
+} */
+/* .one:hover .two,
 .one:hover .three {
     transform: scaleX(0.8);
 }
@@ -47,5 +47,5 @@ export default {
 .three:hover .two,
 .three:hover .one {
     transform: scaleX(0.8);
-}
+} */
 </style>

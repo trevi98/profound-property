@@ -1,12 +1,10 @@
 <template>
-    <div
-        class="bg-[url(/images/FB_IMG_16.png)] bg-center bg-no-repeat bg-cover relative px-20 mb-20 layout"
-    >
-        <h1
-            class="text-4xl text-[#ffffff] text-center pt-16 font-bold relative"
+    <div class="px-20 pb-32">
+        <h2
+            class="text-[41px] leading-[62px] pb-8 text-primary-color text-center text-bold"
         >
-            Developers
-        </h1>
+            Agents
+        </h2>
         <div class="flex justify-between items-center pb-10 pt-8 relative">
             <Image img="./images/download1.png" />
             <Image img="./images/download2.png" />
@@ -56,15 +54,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.layout::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgb(0 54 63 / 90%);
-    top: 0;
-    left: 0;
-}
-</style>
->
+<style></style>

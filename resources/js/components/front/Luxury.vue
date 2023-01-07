@@ -12,7 +12,7 @@
             <p class="text-3xl pb-10">Find Homes & Luxury properties</p>
             <router-link :to="{ name: 'home' }" class="hover:text-[#ffffff]">
                 <div class="flex items-center pb-10">
-                    <p class="text-3xl mr-4">Discover Luxury</p>
+                    <p class="text-3xl mr-4 underline">Discover Luxury</p>
                     <svg
                         width="24"
                         height="24"

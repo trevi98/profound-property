@@ -12,7 +12,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+    components: { Image },
+};
 </script>
 
 <style></style>

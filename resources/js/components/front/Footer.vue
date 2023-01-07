@@ -1,6 +1,6 @@
 <template>
     <div class="bg-[#00363F] p-16 flex justify-between items-center">
-        <img src="../../../assets/w-logo.png" alt="" class="w-[300px]" />
+        <img src="./images/w-logo1.png" alt="" class="" />
         <div class="flex justify-between w-[20%]">
             <svg
                 width="28"

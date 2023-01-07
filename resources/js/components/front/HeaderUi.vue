@@ -1,8 +1,10 @@
 <template>
     <div
-        class="bg-[url(/images/Home.png)] pb-24 mb-20 relative bg-no-repeat bg-cover bg-center"
+        class="bg-[url(/images/Home.png)] pb-24 mb-20 relative bg-no-repeat bg-cover bg-center layout"
     >
-        <div class="flex justify-between px-20 py-16 items-center">
+        <div
+            class="flex justify-between px-20 py-16 items-center z-[1] relative"
+        >
             <img
                 src="../../../assets/w-logo.png"
                 alt=""
@@ -93,13 +95,13 @@
                 />
             </svg>
         </div>
-        <div class="pb-12 text-center">
+        <div class="pb-12 text-center relative">
             <h1 class="text-[#ffffff] text-5xl font-bold pb-2">
                 Here, Your dreams will become reality
             </h1>
             <p class="text-[#ffffff] text-3xl">Think Futur</p>
         </div>
-        <div class="flex items-center justify-center pb-6">
+        <div class="flex items-center justify-center pb-6 relative">
             <input
                 type="text"
                 placeholder=" Search by places, City, Address and agents "
@@ -132,7 +134,7 @@
                 </svg>
             </div>
         </div>
-        <div class="max-w-[calc(50%+56px)] flex m-auto pb-3">
+        <div class="max-w-[calc(50%+56px)] flex m-auto pb-3 relative">
             <SelectSearch name="Select property type" class="w-[calc(97%/4)]">
                 <option v-for="prop in propertyes">{{ prop }}</option>
             </SelectSearch>
@@ -153,7 +155,7 @@
                 </option>
             </SelectSearch>
         </div>
-        <div class="max-w-[calc(50%+56px)] flex m-auto pb-16">
+        <div class="max-w-[calc(50%+56px)] flex m-auto pb-16 relative">
             <SelectSearch name="Buy" class="w-[calc(96%/4)]">
                 <option value="">Rent</option></SelectSearch
             >
@@ -204,5 +206,14 @@ export default {
 }
 a:hover {
     color: inherit;
+}
+.layout::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0 54 63 / 40%);
+    top: 0;
+    left: 0;
 }
 </style>

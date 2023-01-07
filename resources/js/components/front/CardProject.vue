@@ -1,5 +1,7 @@
 <template>
-    <div class="hover:cursor-pointer w-[calc(97%/3)]">
+    <div
+        class="hover:cursor-pointer flex-1 hover:flex-[1.3] transition-all duration-[600ms] flex flex-column"
+    >
         <div>
             <img
                 src="./images/photo.png"

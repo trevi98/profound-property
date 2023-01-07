@@ -2,11 +2,11 @@
     <div class="px-20">
         <ViewAll name="Offplan Latest Launches" />
         <div class="flex justify-between pb-20">
+            <!-- <Card />
             <Card />
-            <Card />
-            <Card />
-            <!-- <Slide /> -->
+            <Card /> -->
         </div>
+        <Slide />
         <ViewAll name="Water Front" />
         <CardImage />
         <CardImage />
@@ -41,17 +41,20 @@
             </div>
         </router-link>
         <ViewAll name="Buying Property in Dubai" />
-        <div class="flex justify-between pb-20">
+        <!-- <div class="flex justify-between pb-20">
             <Card />
             <Card />
             <Card />
-        </div>
+        </div> -->
+        <Slide />
+
         <ViewAll name="Renting a Property in Dubai" />
-        <div class="flex justify-between pb-20">
+        <!-- <div class="flex justify-between pb-20">
             <Card />
             <Card />
             <Card />
-        </div>
+        </div> -->
+        <Slide />
     </div>
 </template>
 
