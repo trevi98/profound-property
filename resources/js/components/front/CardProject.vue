@@ -1,6 +1,6 @@
 <template>
     <div
-        class="hover:cursor-pointer flex-1 hover:flex-[1.3] transition-all duration-[600ms] flex flex-column"
+        class="hover:cursor-pointer flex-1 hover:scale-x-[1.2] relative left-[0%] transition-all duration-[600ms] flex flex-column"
     >
         <div>
             <img

@@ -1,5 +1,5 @@
 <template>
-    <Landing />
+    <LandingHome />
     <Luxury />
     <Popular />
     <Developers />
@@ -9,7 +9,7 @@
 
 <script>
 import Luxury from "./Luxury.vue";
-import Landing from "./Landing.vue";
+import LandingHome from "./LandingHome.vue";
 import Popular from "./Popular.vue";
 import Developers from "./Developers.vue";
 import Media from "./Media.vue";
@@ -17,7 +17,7 @@ import Media from "./Media.vue";
 import Agents from "./Agents.vue";
 export default {
     components: {
-        Landing,
+        LandingHome,
         Luxury,
         Popular,
         Developers,

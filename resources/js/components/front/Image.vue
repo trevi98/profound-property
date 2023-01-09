@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[180px] hover:cursor-pointer"
+        class="bg-[#ffffff] rounded-[50%] flex items-center justify-center w-[188px] h-[188px] hover:cursor-pointer shadow-primary"
     >
         <img :src="img" alt="" />
     </div>
@@ -12,4 +12,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

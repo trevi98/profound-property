@@ -13,7 +13,7 @@
                 <FarmGardens height="true" width="true" />
             </div>
             <div class="w-[40%] pb-16">
-                <div class="border-solid border-[#212121] border-b-2"></div>
+                <div class="border-solid border-primary-color border-b-2"></div>
                 <DetailsFarm />
                 <DetailsFarm />
                 <DetailsFarm />
@@ -24,7 +24,7 @@
         <div
             class="flex text-base font-bold items-center rounded-[10px] cursor-pointer"
         >
-            <p class="text-[#424242] pr-4">View all</p>
+            <p class="text-[#424242] pr-4 text-secondary-font">View all</p>
             <svg
                 width="24"
                 height="24"

@@ -14,7 +14,7 @@
             </router-link>
         </div>
         <div
-            class="bg-[#0E373F] rounded-tr-[24px] rounded-br-[24px] py-8 px-9 flex flex-column justify-between flex-[0.5] relative left-[-1px] text-center"
+            class="bg-[#0E373F] rounded-tr-[24px] rounded-br-[24px] py-8 px-9 flex flex-column justify-between flex-[0.5] relative left-[-1px] text-center shadow-primary"
         >
             <div>
                 <h2 class="text-3xl text-[#F5F5F5] pb-4">
@@ -74,7 +74,7 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgb(0 54 63 / 40%);
+    background: rgba(14, 55, 63, 0.2);
     top: 0;
     left: 0;
     z-index: 1;

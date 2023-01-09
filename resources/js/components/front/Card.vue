@@ -1,17 +1,17 @@
 <template>
-    <router-link :to="{ name: 'home' }">
-        <div class="main relative">
+    <div class="main relative mx-[1rem]">
+        <router-link :to="{ name: 'home' }">
             <img
-                src="./images/unsplash.png"
+                src="./images/unsplas.png"
                 alt=""
                 class="rounded-[24px] image"
             />
             <div
                 class="absolute top-0 p-4 text-center flex flex-column justify-between h-[100%]"
             >
-                <div>
+                <div class="relative">
                     <h2
-                        class="text-[41px] leading-[62px] text-[#ffffff] pb-4 pt-[15rem]"
+                        class="text-[41px] leading-[62px] text-[#ffffff] pb-4 relative top-[15rem]"
                     >
                         Farm gardens the valley
                     </h2>
@@ -39,6 +39,7 @@
                             viewBox="0 0 24 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            class="svg"
                         >
                             <path
                                 d="M14.4302 5.92993L20.5002 11.9999L14.4302 18.0699"
@@ -47,6 +48,7 @@
                                 stroke-miterlimit="10"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
+                                class="hover:stroke-[#ffffff]"
                             />
                             <path
                                 d="M3.5 12H20.33"
@@ -55,13 +57,14 @@
                                 stroke-miterlimit="10"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
+                                class="main-hover:stroke-white"
                             />
                         </svg>
                     </div>
                 </div>
             </div>
-        </div>
-    </router-link>
+        </router-link>
+    </div>
 </template>
 
 <script>
@@ -98,12 +101,15 @@ export default {};
 .main:hover .icon {
     background-color: transparent;
 }
+.main:hover {
+    color: white;
+}
 .main:hover svg {
     color: #f5f5f5;
 }
 @keyframes movee {
     to {
-        padding-top: 0;
+        top: 0;
     }
 }
 @keyframes show1 {
@@ -131,29 +137,53 @@ export default {};
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgb(0 54 63 / 60%);
+    background: radial-gradient(
+        50.49% 38.62% at 50% 50%,
+        rgba(245, 245, 245, 0.04) 0%,
+        rgba(93, 120, 125, 0.3) 50.16%,
+        rgba(14, 55, 63, 0.32) 100%
+    );
     border-radius: 24px;
     top: 0;
     left: 0;
-    opacity: 0;
-}
-@keyframes opa {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0.4;
-    }
-    80% {
-        opacity: 0.8;
-    }
-    100% {
-        opacity: 100%;
-    }
 }
 .main:hover::before {
     animation-name: opa;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+}
+@keyframes opa {
+    0% {
+        background: linear-gradient(
+            0deg,
+            rgba(14, 55, 63, 0.7) 0%,
+            rgba(14, 55, 63, 0.17) 100%
+        );
+        opacity: 0.1;
+    }
+    40% {
+        background: linear-gradient(
+            0deg,
+            rgba(14, 55, 63, 0.7) 0%,
+            rgba(14, 55, 63, 0.17) 100%
+        );
+        opacity: 0.4;
+    }
+    80% {
+        background: linear-gradient(
+            0deg,
+            rgba(14, 55, 63, 0.7) 0%,
+            rgba(14, 55, 63, 0.17) 100%
+        );
+        opacity: 0.8;
+    }
+    100% {
+        background: linear-gradient(
+            0deg,
+            rgba(14, 55, 63, 0.7) 0%,
+            rgba(14, 55, 63, 0.17) 100%
+        );
+        opacity: 100%;
+    }
 }
 </style>

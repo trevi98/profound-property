@@ -62,7 +62,13 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgb(0 54 63 / 90%);
+    background: radial-gradient(
+        34.72% 72.08% at 50% 50%,
+        rgba(245, 245, 245, 0.06) 0%,
+        rgba(109, 133, 138, 0.54) 37.23%,
+        rgba(14, 55, 63, 0.42) 92.19%,
+        rgba(14, 55, 63, 0.48) 100%
+    );
     top: 0;
     left: 0;
 }

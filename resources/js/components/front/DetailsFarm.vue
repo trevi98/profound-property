@@ -1,6 +1,6 @@
 <template>
-    <div class="py-4 border-solid border-[#212121] border-b-2 w-[100%]">
-        <h2 class="text-[#424242] text-2xl pb-4 font-bold">
+    <div class="py-4 border-solid border-primary-color border-b-2 w-[100%]">
+        <h2 class="text-[#000000] text-secondary-font pb-4 font-bold">
             Farm gardens the valley
         </h2>
         <p class="text-[#757575] text-xl pb-8">

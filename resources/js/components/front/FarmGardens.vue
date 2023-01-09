@@ -11,8 +11,8 @@
                 />
             </div>
         </router-link>
-        <p class="text-[#424242] text-xl pt-4 pb-1">Farm gardens the valley</p>
-        <span class="text-[#9E9E9E] text-xl">Farm gardens</span>
+        <p class="text-blac-color text-xl pt-4 pb-1">Farm gardens the valley</p>
+        <span class="text-black-color text-xl">Farm gardens</span>
     </div>
 </template>
 
@@ -26,7 +26,12 @@ export default {};
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgb(0 54 63 / 40%);
+    background: radial-gradient(
+        50.49% 38.62% at 50% 50%,
+        rgba(14, 55, 63, 0.08) 0%,
+        rgba(93, 120, 125, 0.3) 50.16%,
+        rgba(14, 55, 63, 0.32) 100%
+    );
     top: 0;
     left: 0;
     border-radius: 24px;

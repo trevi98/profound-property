@@ -1,8 +1,8 @@
 <template>
     <div
-        class="project_down absolute top-[5%] left-[80px] w-[calc(100%-160px)] bg-[#ffffff] py-3 px-5 transition-[2s] slide-bottom rounded-[10px] hover:cursor-context-menu z-[1]"
+        class="project_down absolute top-[19%] left-[80px] w-[calc(100%-160px)] bg-[#ffffff] py-3 px-5 transition-[2s] slide-bottom rounded-[10px] hover:cursor-context-menu z-[1]"
     >
-        <div class="flex m-w-[800px] gap-6 py-12">
+        <div class="flex m-w-[800px] gap-6 py-12 parent">
             <CardProject class="one" />
             <CardProject class="two" />
             <CardProject class="three" />
@@ -22,30 +22,26 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .project_down {
     display: none;
     opacity: 0;
 }
-/* .one:hover {
-    flex: 1.1 1 0%;
+.one:hover {
+    left: 3%;
 }
-.two:hover {
-    flex: 1.5;
+.one:hover ~ .two {
+    left: 4%;
 }
-.three:hover {
-    flex: 1.5;
-} */
-/* .one:hover .two,
-.one:hover .three {
-    transform: scaleX(0.8);
+.one:hover ~ .two,
+.one:hover ~ .three {
+    transform: scaleX(0.9);
 }
-.two:hover .one,
-.two:hover .three {
-    transform: scaleX(0.8);
+.two:hover ~ .three {
+    transform: scaleX(0.9);
 }
-.three:hover .two,
-.three:hover .one {
-    transform: scaleX(0.8);
-} */
+.parent:nth-child(3):hover .parent:nth-child(2),
+.parent:nth-child(3):hover .parent:nth-child(1) {
+    transform: scale(0.9);
+}
 </style>
